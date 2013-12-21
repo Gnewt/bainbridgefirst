@@ -11,6 +11,8 @@ public class HelloWorld {
 		Random generator = new Random();
 		
 		nameList.add("Ronnie Nigash");
+		nameList.add("Mr. Chee");
+		nameList.add("Joe Van Dyke");
 		
 		loopDaLoop(nameList, generator);
 	}
@@ -18,7 +20,7 @@ public class HelloWorld {
 	private static void loopDaLoop (ArrayList<String> list, Random generator){
 		for(String name : list){
 			
-			List<String> greetList = Arrays.asList("hi!", "how are you?", "good morning.", "what's up?");
+			List<String> greetList = Arrays.asList("hi!", "how are you?", "did you do your homework?", "good morning.", "what's up?");
 			int randNum = generator.nextInt(greetList.size());
 			
 			System.out.printf("%s says,\"%s\"\n", name, greetList.get(randNum));
