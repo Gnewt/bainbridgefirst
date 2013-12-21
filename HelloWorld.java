@@ -10,10 +10,11 @@ public class HelloWorld {
 		ArrayList<String> nameList = new ArrayList<String>();
 		Random generator = new Random();
 		
-		nameList.add("Ronnie Nigash");
-		nameList.add("Mr. Chee");
-		nameList.add("Joe Van Dyke");
-                nameList.add("binnur");
+        nameList.add("Ronnie Nigash");
+        nameList.add("Mr. Chee");
+        nameList.add("Joe Van Dyke");
+        nameList.add("Binnur");
+        nameList.add("Tarkan Al-Kazily")
 		
 		loopDaLoop(nameList, generator);
 	}
@@ -21,7 +22,11 @@ public class HelloWorld {
 	private static void loopDaLoop (ArrayList<String> list, Random generator){
 		for(String name : list){
 			
-			List<String> greetList = Arrays.asList("hi!", "how are you?", "did you do your homework?", "good morning.", "what's up?", "Merhabalar!!");
+			List<String> greetList = Arrays.asList("hi!", "how are you?",
+                                                   "did you do your homework?",
+                                                   "good morning.", "what's up?",
+                                                   "merhabalar!!", "welcome!",
+                                                   "allons-y!", "geronimo!");
 			int randNum = generator.nextInt(greetList.size());
 			
 			System.out.printf("%s says,\"%s\"\n", name, greetList.get(randNum));
