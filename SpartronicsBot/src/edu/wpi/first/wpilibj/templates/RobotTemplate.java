@@ -50,12 +50,13 @@ public class RobotTemplate extends IterativeRobot {
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
         
-        frontLeft = new Victor(1);
+        frontLeft = new Victor(1); // Creating Victor motors
         frontRight = new Victor(2);
         rearLeft = new Victor(3);
         rearRight = new Victor(4);
         
-        myDrive = new RobotDrive(frontLeft,frontRight,rearLeft,rearRight);
+        myDrive = new RobotDrive(frontLeft, frontRight);
+        // myDrive = new RobotDrive(frontLeft,frontRight,rearLeft,rearRight);
         
         driveStick = new Joystick(1);
         
@@ -66,7 +67,7 @@ public class RobotTemplate extends IterativeRobot {
     }
 
     public void autonomousInit() {
-        // schedule the autonomous command (example)
+        // schedule the autonomous command
         autonomousCommand.start();
         while(isAutonomous() && isEnabled()){
             double angle = gyro.getAngle(); // get heading
