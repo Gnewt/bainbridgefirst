@@ -16,7 +16,8 @@ public class HelloWorld {
         nameList.add("Binnur");
         nameList.add("Tarkan Al-Kazily");
         nameList.add("Faust");
-        nameList.add("Ben DeVries");	
+        nameList.add("Ben DeVries");
+        nameList.add("Keet Curtis");
 		
 		loopDaLoop(nameList, generator);
 	}
