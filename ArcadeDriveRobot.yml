@@ -123,33 +123,21 @@ Children:
   - Name: Pneumatics Control
     Base: Subsystem
     Children:
-    - Name: Double Solenoid 1
-      Base: Double Solenoid
+    - Name: Harvester Relay
+      Base: Spike
       Children: []
       Properties:
-        Forward Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['1', '2', '3', '4', '5', '6', '7', '8']
-          default: '1'
-          name: Forward Channel (Solenoid)
-          validators: [Solenoid]
-          value: '1'
-        Forward Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+        Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2']
           default: '1'
-          name: Forward Module (Solenoid)
-          validators: [Solenoid]
+          name: Output Module (Digital)
+          validators: [RelayOutput]
           value: '1'
-        Reverse Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['1', '2']
-          default: '1'
-          name: Reverse Module (Solenoid)
-          validators: [Solenoid]
-          value: '1'
-        Reverse Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+        Output Channel (Relay): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2', '3', '4', '5', '6', '7', '8']
           default: '1'
-          name: Reverse Channel (Solenoid)
-          validators: [Solenoid]
+          name: Output Channel (Relay)
+          validators: [RelayOutput]
           value: '2'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
@@ -170,7 +158,7 @@ Children:
           name: Command
           type: Command
           validators: [TypeDropdownSelected]
-          value: Stop
+          value: StopDriveTrain
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
           default: '1'
@@ -220,7 +208,7 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Drive Train}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
-  - Name: Stop
+  - Name: StopDriveTrain
     Base: Command
     Children: []
     Properties:
@@ -257,4 +245,4 @@ Properties:
     name: Export Commands, validators: null, value: true}
   Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: /Users/Tarkan/NetBeansProjects,
     extension: null, folder: true, name: Java Project Directory, validators: null,
-    value: /Users/Tarkan/bainbridgefirst}
+    value: ./}
