@@ -32,4 +32,44 @@ public class DriveTrain extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    
+    /** getRobotDrive
+     * 
+     * Public method to return robotDrive
+     * v 1.03.01
+     * @return robotDrive The actual robotDrive.
+     */
+    public RobotDrive getRobotDrive() {
+        return robotDrive;
+    }
+    
+    /** arcadeDrive
+     * 
+     * Public method to enable arcade drive using a joystick.
+     * v 1.03.01
+     * @param stick A joystick.
+     */
+    public void arcadeDrive(Joystick stick) {
+        robotDrive.arcadeDrive(stick);
+    }
+    
+    /** driveStraight
+     * 
+     * Public method to drive straight at speed
+     * v 1.03.01
+     * @param speed Motor speed. Value should be between -1 and 1
+     */
+    
+    public void driveStraight(double speed) {
+        robotDrive.tankDrive(speed, speed);
+    }
+    
+    /** stop
+     * 
+     * public method to stop the drive train
+     * v 1.03.01
+     */
+    public void stop() {
+        robotDrive.tankDrive(0, 0);
+    }
 }
