@@ -50,7 +50,7 @@ public class RobotMap {
         harvesterPneumaticAnglers = new DoubleSolenoid(1, 1, 2);      
 	
         
-        harvesterCollectionWheels = new Talon(1, 3);
+        harvesterCollectionWheels = new Talon(1, 4);
 	LiveWindow.addActuator("Harvester", "Collection Wheels", (Talon) harvesterCollectionWheels);
         
         airCompressorCompressor = new Compressor(1, 1, 1, 1);
