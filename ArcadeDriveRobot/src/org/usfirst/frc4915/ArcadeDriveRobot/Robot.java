@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc4915.ArcadeDriveRobot.commands.*;
 import org.usfirst.frc4915.ArcadeDriveRobot.subsystems.*;
 /**
@@ -64,6 +65,8 @@ public class Robot extends IterativeRobot {
         messages.display(1, "Hi 456789012345678901234567890"); //tests the SendUserMessages, 30 characters
         messages.display(2, "Hi2456789012345678901234567890"); //tests the SendUserMessages, 30 characters
         messages.display(3, "Hi3456789012345678901234567890"); //tests the SendUserMessages, 30 characters
+        
+        Robot.airCompressor.start();
     }
     
     public void autonomousInit() {
@@ -88,6 +91,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        SmartDashboard.putBoolean("Pressure Switch", RobotMap.airCompressorCompressor.getPressureSwitchValue());
     }
     /**
      * This function called periodically during test mode
