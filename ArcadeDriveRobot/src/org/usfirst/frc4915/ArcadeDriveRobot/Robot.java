@@ -33,6 +33,8 @@ public class Robot extends IterativeRobot {
     
     public static final String VERSION = "v1.04.01";
     // Added Launcher functionality
+    // Adds beginnings of GrabBall, ReleaseBall, HarvesterWheelsBack, and HarvesterWheelsForward commands
+    // Renamed PneumaticsControl to Harvester
     
     /**
      * This function is run when the robot is first started up and should be
