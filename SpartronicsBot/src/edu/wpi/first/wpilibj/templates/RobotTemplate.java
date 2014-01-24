@@ -89,7 +89,7 @@ public class RobotTemplate extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        autonomousCommand.cancel();
+        if (autonomousCommand != null) autonomousCommand.cancel();
         while (isOperatorControl() && isEnabled()){
             myDrive.arcadeDrive(driveStick);
             Timer.delay(0.01);
@@ -108,5 +108,6 @@ public class RobotTemplate extends IterativeRobot {
      */
     public void testPeriodic() {
         LiveWindow.run();
+        System.out.println("Running Test Periodic");
     }
 }
