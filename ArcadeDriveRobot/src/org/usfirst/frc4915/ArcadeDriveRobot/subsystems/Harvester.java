@@ -43,4 +43,3 @@ public class Harvester extends Subsystem {
         pneumaticAnglers.set(DoubleSolenoid.Value.kOff);
     }
 }
-
