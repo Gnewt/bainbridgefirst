@@ -1,2 +1,12 @@
 /SpartronicsBot/build/
+<<<<<<< HEAD
 /SpartronicsBot/nbproject/private/
+=======
+/SpartronicsBot/nbproject/private/
+/ArcadeDrive2Motors/nbproject/private/
+/ArcadeDrive2Motors/ArcadeDrive2Motors/nbproject/private/
+/ArcadeDrive/nbproject/private
+/ArcadeDriveRobot/nbproject/private/
+/ArcadeDriveRobot/build/
+*~
+>>>>>>> a78fda9334528398d801a2b3c8099578f55e0fb3

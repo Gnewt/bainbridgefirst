@@ -109,5 +109,6 @@ public class RobotTemplate extends IterativeRobot {
     public void testPeriodic() {
         LiveWindow.run();
         System.out.println("Running Test Periodic");
+        System.out.println("Hello Again");
     }
 }
