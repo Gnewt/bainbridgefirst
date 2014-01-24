@@ -19,7 +19,7 @@ import edu.wpi.first.wpilibj.DriverStationLCD;
 public class SendUserMessages {
 
     public static void main(String[] args) {
-
+        
     }
 
     public static void display(int line, String msg) {
