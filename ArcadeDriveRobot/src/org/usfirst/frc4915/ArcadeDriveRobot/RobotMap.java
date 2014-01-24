@@ -24,7 +24,8 @@ public class RobotMap {
     public static SpeedController driveTrainRightMotor;
     public static SpeedController driveTrainLeftMotor;
     public static RobotDrive driveTrainRobotDrive;
-    public static DoubleSolenoid pneumaticsControlHarvesterDoubleSolenoid;
+    public static DoubleSolenoid harvesterPneumaticAnglers;
+    public static SpeedController harvesterCollectionWheels;
     public static Compressor airCompressorCompressor;
     public static Encoder launcherQuadratureEncoder;
     public static SpeedController launcherWindingMotor;
@@ -46,8 +47,11 @@ public class RobotMap {
         driveTrainRobotDrive.setSensitivity(0.5);
         driveTrainRobotDrive.setMaxOutput(1.0);
         
-        pneumaticsControlHarvesterDoubleSolenoid = new DoubleSolenoid(1, 1, 2);      
+        harvesterPneumaticAnglers = new DoubleSolenoid(1, 1, 2);      
 	
+        
+        harvesterCollectionWheels = new Talon(1, 3);
+	LiveWindow.addActuator("Harvester", "Collection Wheels", (Talon) harvesterCollectionWheels);
         
         airCompressorCompressor = new Compressor(1, 1, 1, 1);
 	
