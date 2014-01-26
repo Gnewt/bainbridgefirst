@@ -35,7 +35,7 @@ public class  ArcadeDrive extends Command {
         
         Joystick joystickDrive = new Joystick(1);
         joystickDrive = Robot.oi.getJoystickDrive();
-        RobotMap.driveTrainRobotDrive.setMaxOutput(joystickDrive.getThrottle());
+        RobotMap.driveTrainRobotDrive.setMaxOutput(joystickDrive.getAxis(Joystick.AxisType.kThrottle));
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
