@@ -92,6 +92,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         SmartDashboard.putBoolean("Pressure Switch", RobotMap.airCompressorCompressor.getPressureSwitchValue());
+        SmartDashboard.putNumber("Throttle", oi.getJoystickDrive().getThrottle());
     }
     /**
      * This function called periodically during test mode
