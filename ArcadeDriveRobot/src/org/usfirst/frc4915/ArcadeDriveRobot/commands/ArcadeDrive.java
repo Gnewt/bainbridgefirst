@@ -8,8 +8,12 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 package org.usfirst.frc4915.ArcadeDriveRobot.commands;
+
+import org.usfirst.frc4915.ArcadeDriveRobot.OI;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
+import org.usfirst.frc4915.ArcadeDriveRobot.RobotMap;
 /**
  *
  */
@@ -28,6 +32,10 @@ public class  ArcadeDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         Robot.driveTrain.arcadeDrive(Robot.oi.getJoystickDrive());
+        
+        Joystick joystickDrive = new Joystick(1);
+        joystickDrive = Robot.oi.getJoystickDrive();
+        RobotMap.driveTrainRobotDrive.setMaxOutput(joystickDrive.getThrottle());
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
