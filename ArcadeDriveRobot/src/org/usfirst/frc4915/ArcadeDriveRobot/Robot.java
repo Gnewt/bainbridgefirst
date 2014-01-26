@@ -9,9 +9,12 @@
 // it from being updated in the future.
 package org.usfirst.frc4915.ArcadeDriveRobot;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc4915.ArcadeDriveRobot.commands.*;
 import org.usfirst.frc4915.ArcadeDriveRobot.subsystems.*;
 /**
@@ -82,6 +85,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        SmartDashboard.putNumber("Throttle ", oi.getJoystickDrive().getThrottle());
     }
     /**
      * This function called periodically during test mode
