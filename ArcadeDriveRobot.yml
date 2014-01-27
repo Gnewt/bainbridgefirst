@@ -182,7 +182,29 @@ Children:
     - Name: Launcher Motor
       Base: PID Controller
       Children:
-      - Name: Quadrature Encoder
+      - Name: Winding Motor
+        Base: Speed Controller
+        Children: []
+        Properties:
+          Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
+            choices: *id001
+            default: '1'
+            name: Output Module (Digital)
+            validators: *id002
+            value: '1'
+          Type: !!robotbuilder.data.properties.ChoicesProperty
+            choices: *id003
+            default: Victor
+            name: Type
+            validators: null
+            value: Talon
+          Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
+            choices: *id004
+            default: '1'
+            name: Output Channel (PWM)
+            validators: *id005
+            value: '3'
+      - Name: Quadrature Encoder 1
         Base: Quadrature Encoder
         Children: []
         Properties:
@@ -228,28 +250,6 @@ Children:
             value: '2'
           Reverse Direction: !!robotbuilder.data.properties.BooleanProperty {default: false,
             name: Reverse Direction, validators: null, value: false}
-      - Name: Winding Motor
-        Base: Speed Controller
-        Children: []
-        Properties:
-          Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id001
-            default: '1'
-            name: Output Module (Digital)
-            validators: *id002
-            value: '1'
-          Type: !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id003
-            default: Victor
-            name: Type
-            validators: null
-            value: Talon
-          Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id004
-            default: '1'
-            name: Output Channel (PWM)
-            validators: *id005
-            value: '3'
       Properties:
         D: !!robotbuilder.data.properties.DoubleProperty {default: 0, name: D, validators: null,
           value: 0.0}
@@ -260,7 +260,7 @@ Children:
           name: Input
           type: PIDSource
           validators: [ChildDropdownSelected]
-          value: Launcher Quadrature Encoder
+          value: Launcher Quadrature Encoder 1
         Limit Output: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Limit Output, validators: null, value: false}
         F: !!robotbuilder.data.properties.DoubleProperty {default: 0, name: F, validators: null,
