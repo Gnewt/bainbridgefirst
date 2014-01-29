@@ -102,6 +102,8 @@ public class Robot extends IterativeRobot {
         
         SmartDashboard.putNumber("kThrottle ", .5 * ( -1 * kThrottleValueRAW)); // Advanced Joystick Throttle
         // SmartDashboard.putNumber("Z Axis ", oi.joystickDrive.getAxis(Joystick.AxisType.kZ)); // Attack Joystick Throttle
+    
+        SmartDashboard.putBoolean("Harvester Limit Switch1: ", harvester.getLimitSwitch1());
     }
     /**
      * This function called periodically during test mode
