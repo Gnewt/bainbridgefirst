@@ -24,6 +24,7 @@ public class  Turn180 extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        Robot.driveTrain.turn(180.0);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -34,9 +35,11 @@ public class  Turn180 extends Command {
     }
     // Called once after isFinished returns true
     protected void end() {
+        Robot.driveTrain.stop();
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
+    // Can't be interrupted
     protected void interrupted() {
     }
 }
