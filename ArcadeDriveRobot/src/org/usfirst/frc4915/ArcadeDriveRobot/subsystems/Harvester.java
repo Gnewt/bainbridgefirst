@@ -46,4 +46,12 @@ public class Harvester extends Subsystem {
     public void stop() {
         pneumaticAnglers.set(DoubleSolenoid.Value.kOff);
     }
+    
+    public void stopWheels() {
+        collectionWheels.set(0.0);
+    }
+    
+    public void startWheels(double speed) {
+        collectionWheels.set(speed);
+    }
 }
