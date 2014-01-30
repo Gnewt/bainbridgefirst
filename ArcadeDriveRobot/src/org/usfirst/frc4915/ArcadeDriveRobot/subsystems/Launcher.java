@@ -41,7 +41,7 @@ public class Launcher extends Subsystem {
     public void extendPneumatics() {
         gearboxPneumatics.set(true);
     }
-    
+  
     /**
      * stop
      * 
@@ -58,5 +58,15 @@ public class Launcher extends Subsystem {
      */
     public boolean getStatePneumatics() {
         return gearboxPneumatics.get();
+    }
+      
+    public void startWindingMotor(double speed){
+        windingMotor.set(speed);
+    }
+    public void stopWindingMotor() {
+        windingMotor.set(0.0);
+    }
+    public double getWindingSpeed() {
+        return windingMotor.get();
     }
 }
