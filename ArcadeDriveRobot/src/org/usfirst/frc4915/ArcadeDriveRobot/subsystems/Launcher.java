@@ -50,4 +50,13 @@ public class Launcher extends Subsystem {
     public void stop() {
         gearboxPneumatics.set(false);
     }
+    
+    /**
+     * getStatePneumatics
+     * 
+     * @return the state of gearboxPneumatics
+     */
+    public boolean getStatePneumatics() {
+        return gearboxPneumatics.get();
+    }
 }
