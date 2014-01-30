@@ -38,7 +38,7 @@ public class Launcher extends Subsystem {
      * 
      * Pushes the pneumatic cylinder out
      */
-    public void extendPneumatics() {
+    public void pneumaticsOn() {
         gearboxPneumatics.set(true);
     }
   
