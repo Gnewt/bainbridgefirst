@@ -24,16 +24,18 @@ public class  HarvesterWheelsBack extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        Robot.harvester.startWheels(-0.5); // starts wheels at half speed, backwards
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return isTimedOut();
     }
     // Called once after isFinished returns true
     protected void end() {
+        Robot.harvester.stopWheels();
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
