@@ -13,8 +13,8 @@ import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
 /**
  *
  */
-public class  ExtendGearboxPmtc extends Command {
-    public ExtendGearboxPmtc() {
+public class  RetractGearboxPmtc extends Command {
+    public RetractGearboxPmtc() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 	
@@ -25,7 +25,7 @@ public class  ExtendGearboxPmtc extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.launcher.extendPneumatics();
+        Robot.launcher.pneumaticsOn();
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {

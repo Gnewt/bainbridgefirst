@@ -27,7 +27,7 @@ public class RobotMap {
     public static Gyro driveTrainGyroscope;
     public static DoubleSolenoid harvesterPneumaticAnglers;
     public static SpeedController harvesterCollectionWheels;
-    public static DigitalInput harvesterLimitSwitch1;
+    public static DigitalInput harvesterTestForBall;
     public static Compressor airCompressorCompressor;
     public static Solenoid launcherGearboxPneumatics;
     public static SpeedController launcherWindingMotor;
@@ -56,8 +56,8 @@ public class RobotMap {
         harvesterCollectionWheels = new Talon(1, 4);
 	LiveWindow.addActuator("Harvester", "Collection Wheels", (Talon) harvesterCollectionWheels);
         
-        harvesterLimitSwitch1 = new DigitalInput(1, 2);
-	LiveWindow.addSensor("Harvester", "Limit Switch 1", harvesterLimitSwitch1);
+        harvesterTestForBall = new DigitalInput(1, 2);
+	LiveWindow.addSensor("Harvester", "Test For Ball", harvesterTestForBall);
         
         airCompressorCompressor = new Compressor(1, 1, 1, 1);
 	
