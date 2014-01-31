@@ -21,7 +21,12 @@ public class SendUserMessages {
     public static void main(String[] args) {
         
     }
-
+    
+    /**
+     *
+     * @param line which line to print the message on
+     * @param msg the message to be sent
+     */
     public static void display(int line, String msg) {
         DriverStationLCD.Line l;
         switch(line) {
