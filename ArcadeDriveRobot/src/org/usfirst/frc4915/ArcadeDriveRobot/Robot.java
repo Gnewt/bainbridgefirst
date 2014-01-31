@@ -67,7 +67,7 @@ public class Robot extends IterativeRobot {
         SendUserMessages.display(2, "Hi2456789012345678901234567890"); //tests the SendUserMessages, 30 characters
         SendUserMessages.display(3, "Hi3456789012345678901234567890"); //tests the SendUserMessages, 30 characters
         gyroscope.reset();
-        Robot.airCompressor.start();
+        airCompressor.start();
     }
     
     public void autonomousInit() {
