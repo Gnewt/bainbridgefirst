@@ -456,7 +456,7 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Launcher}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
-  - Name: Stop Gearbox Pmtc
+  - Name: Loosen Gearbox Pmtc
     Base: Command
     Children: []
     Properties:

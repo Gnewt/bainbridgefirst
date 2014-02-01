@@ -17,6 +17,8 @@ import org.usfirst.frc4915.ArcadeDriveRobot.RobotMap;
  *
  */
 public class  ArcadeDrive extends Command {
+    public Joystick joystickDrive = Robot.oi.getJoystickDrive();
+    public double joystickThrottle = .5 * (-1 * joystickDrive.getAxis(Joystick.AxisType.kThrottle) + 1.0);
     
     public ArcadeDrive() {
         // Use requires() here to declare subsystem dependencies
@@ -34,8 +36,7 @@ public class  ArcadeDrive extends Command {
         Robot.driveTrain.arcadeDrive(Robot.oi.getJoystickDrive());
         
         Joystick joystickDrive = Robot.oi.getJoystickDrive();
-        double joystickThrottle = .5 * (-1 * joystickDrive.getAxis(Joystick.AxisType.kThrottle) + 1.0); // Goes from 0 to 1, flipping the throttle on hardware to make sense
-        RobotMap.driveTrainRobotDrive.setMaxOutput(joystickThrottle); // Advanced Joystick goes from 0 to 1
+        Robot.driveTrain.setMaxOutput(joystickThrottle); // Advanced Joystick goes from 0 to 1
         // RobotMap.driveTrainRobotDrive.setMaxOutput(joystickDrive.getAxis(Joystick.AxisType.kZ)); // Attack Joystick
     }
     // Make this return true when this Command no longer needs to run execute()

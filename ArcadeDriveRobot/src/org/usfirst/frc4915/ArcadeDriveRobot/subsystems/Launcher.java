@@ -43,11 +43,11 @@ public class Launcher extends Subsystem {
     }
   
     /**
-     * stop
+     * pneumaticsStop
      * 
      * Stops filling the cylinder. Will not retract it, but will allow it to be pushed back
      */
-    public void stop() {
+    public void pneumaticsStop() {
         gearboxPneumatics.set(false);
     }
     
