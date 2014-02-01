@@ -25,7 +25,7 @@ public class  RetractGearboxPmtc extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.launcher.pneumaticsOn();
+        Robot.launcher.pneumaticsStop();
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
