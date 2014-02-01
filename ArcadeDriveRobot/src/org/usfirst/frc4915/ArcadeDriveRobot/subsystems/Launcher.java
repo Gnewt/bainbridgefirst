@@ -9,10 +9,7 @@
 // it from being updated in the future.
 package org.usfirst.frc4915.ArcadeDriveRobot.subsystems;
 import org.usfirst.frc4915.ArcadeDriveRobot.RobotMap;
-import org.usfirst.frc4915.ArcadeDriveRobot.commands.*;
 import edu.wpi.first.wpilibj.*;
-import edu.wpi.first.wpilibj.CounterBase.EncodingType; import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
-import edu.wpi.first.wpilibj.smartdashboard.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *

@@ -8,11 +8,9 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 package org.usfirst.frc4915.ArcadeDriveRobot.commands;
-import org.usfirst.frc4915.ArcadeDriveRobot.OI;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
-import org.usfirst.frc4915.ArcadeDriveRobot.RobotMap;
 /**
  *
  */
