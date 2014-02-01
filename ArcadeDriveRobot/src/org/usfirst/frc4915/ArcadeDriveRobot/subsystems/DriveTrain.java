@@ -12,6 +12,7 @@ import org.usfirst.frc4915.ArcadeDriveRobot.RobotMap;
 import org.usfirst.frc4915.ArcadeDriveRobot.commands.*;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
 /**
  *
  */
@@ -31,16 +32,6 @@ public class DriveTrain extends Subsystem {
 	
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
-    }
-    
-    /** getRobotDrive
-     * 
-     * Public method to return robotDrive
-     * v 1.03.01
-     * @return robotDrive The actual robotDrive.
-     */
-    public RobotDrive getRobotDrive() {
-        return robotDrive;
     }
     
     /** arcadeDrive
@@ -75,10 +66,14 @@ public class DriveTrain extends Subsystem {
     
     public void turn(double angle) {
         double degreesOfFreedom = 2.0;
-        RobotMap.gyroscopeSensor.reset();
-        while (RobotMap.gyroscopeSensor.getAngle() <= angle - degreesOfFreedom) {
+        Robot.gyroscope.reset();
+        while (Robot.gyroscope.getAngle() <= angle - degreesOfFreedom) {
             robotDrive.tankDrive(0.5, -0.5);
         }
         stop();
+    }
+    
+    public void setMaxOutput(double topSpeed) {
+        robotDrive.setMaxOutput(topSpeed);
     }
 }
