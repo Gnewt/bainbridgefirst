@@ -24,13 +24,15 @@ public class  IntakeUp extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        Robot.harvester.startWheels(0.50);
+        Robot.harvester.retractPneumatics();
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return Robot.harvester.getMagneticSwitchPneumatics();
     }
     // Called once after isFinished returns true
     protected void end() {
