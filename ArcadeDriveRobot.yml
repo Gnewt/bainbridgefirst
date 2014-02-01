@@ -310,7 +310,7 @@ Children:
           name: When to Run
           validators: null
           value: whenPressed
-    - Name: Extend button
+    - Name: Intake Down Button
       Base: Joystick Button
       Children: []
       Properties:
