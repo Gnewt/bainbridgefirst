@@ -99,14 +99,9 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         SmartDashboard.putBoolean("Pressure Switch", RobotMap.airCompressorCompressor.getPressureSwitchValue());
-        SmartDashboard.putNumber("Throttle", oi.getJoystickDrive().getAxis(Joystick.AxisType.kThrottle));  
-        SmartDashboard.putNumber("NumAxis", oi.getJoystickDrive().getAxis(Joystick.AxisType.kNumAxis));
-        SmartDashboard.putNumber("X", oi.getJoystickDrive().getAxis(Joystick.AxisType.kX));
-        SmartDashboard.putNumber("Z", oi.getJoystickDrive().getAxis(Joystick.AxisType.kZ));
-        SmartDashboard.putNumber("Y", oi.getJoystickDrive().getAxis(Joystick.AxisType.kY));
-        SmartDashboard.putNumber("Twist", oi.getJoystickDrive().getAxis(Joystick.AxisType.kTwist));
         kThrottleValueRAW = oi.joystickDrive.getAxis(Joystick.AxisType.kThrottle);
-        SmartDashboard.putNumber("kThrottle ", .5 * ( -1 * kThrottleValueRAW + 1)); // Advanced Joystick Throttle
+        SmartDashboard.putNumber("kThrottle ", 0.45 * ( -1.0 * kThrottleValueRAW) + 0.55); // Advanced Joystick Throttle
+        // Makes our throttle from the original [-1,1] to [.1,1]
         // SmartDashboard.putNumber("Z Axis ", oi.joystickDrive.getAxis(Joystick.AxisType.kZ)); // Attack Joystick Throttle
         
         SmartDashboard.putBoolean("Gearbox Pneumatics", launcher.getStatePneumatics());
