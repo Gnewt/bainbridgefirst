@@ -26,6 +26,10 @@ public class Harvester extends Subsystem {
     public boolean getLimitSwitchBallLoaded() {
         return testForBall.get(); // true if ball is inside the loader and intake is complete
     }
+    
+    public boolean getMagneticSwitchPneumatics() {
+        return magneticSwitch.get(); // is true if magnetic switch is near magnet // false if fully extended
+    }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     public void initDefaultCommand() {
