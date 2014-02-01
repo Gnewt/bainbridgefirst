@@ -24,7 +24,7 @@ public class  AutonomousCommand extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.driveTrain.driveStraight(1.0);
+        Robot.driveTrain.driveStraight(0.50);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
