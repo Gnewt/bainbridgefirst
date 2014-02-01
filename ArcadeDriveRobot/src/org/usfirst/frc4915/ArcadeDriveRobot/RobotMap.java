@@ -27,6 +27,7 @@ public class RobotMap {
     public static DoubleSolenoid harvesterPneumaticAnglers;
     public static SpeedController harvesterCollectionWheels;
     public static DigitalInput harvesterTestForBall;
+    public static DigitalInput harvesterMagneticSwitch;
     public static Compressor airCompressorCompressor;
     public static Solenoid launcherGearboxPneumatics;
     public static SpeedController launcherWindingMotor;
@@ -55,6 +56,9 @@ public class RobotMap {
         
         harvesterTestForBall = new DigitalInput(1, 2);
 	LiveWindow.addSensor("Harvester", "Test For Ball", harvesterTestForBall);
+        
+        harvesterMagneticSwitch = new DigitalInput(1, 3);
+	LiveWindow.addSensor("Harvester", "Magnetic Switch", harvesterMagneticSwitch);
         
         airCompressorCompressor = new Compressor(1, 1, 1, 1);
 	
