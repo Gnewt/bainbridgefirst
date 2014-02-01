@@ -61,7 +61,7 @@ public class OI {
         
         intakeUpButton = new JoystickButton(joystickDrive, 4);
         intakeUpButton.whenPressed(new IntakeUp());
-        intakeDownButton = new JoystickButton(joystickDrive, 5);
+        intakeDownButton = new JoystickButton(joystickDrive, 3);
         intakeDownButton.whenPressed(new IntakeDown());
         stopButton = new JoystickButton(joystickDrive, 1);
         stopButton.whenPressed(new StopDriveTrain());
