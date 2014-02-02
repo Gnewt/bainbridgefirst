@@ -67,10 +67,8 @@ public class OI {
         stopButton.whenPressed(new StopDriveTrain());
 	    
         // SmartDashboard Buttons
-        SmartDashboard.putData("Extend Pneumatics", new ExtendPneumatics());
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("StopDriveTrain", new StopDriveTrain());
-        SmartDashboard.putData("Retract Pneumatics", new RetractPneumatics());
         SmartDashboard.putData("Start Compression", new StartCompression());
         SmartDashboard.putData("Stop Compression", new StopCompression());
         SmartDashboard.putData("Wind Launcher", new WindLauncher());
