@@ -45,8 +45,9 @@ public class DriveTrain extends Subsystem {
      * @param stick A joystick.
      */
     public void arcadeDrive(Joystick stick) {
-        joystickThrottle = 0.45 * (-1.0 * joystickDrive.getAxis(Joystick.AxisType.kThrottle)) + 0.55;
-        Robot.driveTrain.setMaxOutput(joystickThrottle);
+        //TODO: TEST!
+        //joystickThrottle = 0.45 * (-1.0 * joystickDrive.getAxis(Joystick.AxisType.kThrottle)) + 0.55;
+        //Robot.driveTrain.setMaxOutput(joystickThrottle);
         robotDrive.arcadeDrive(stick);
     }
     
