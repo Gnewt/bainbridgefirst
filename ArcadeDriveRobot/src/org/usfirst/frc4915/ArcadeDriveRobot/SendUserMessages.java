@@ -31,22 +31,23 @@ public class SendUserMessages {
         DriverStationLCD.Line l;
         switch(line) {
             case 1:
-                l = DriverStationLCD.Line.kUser2;
+                /* kMain6 is depreciated - use kUser1 for top of the screen */
+                l = DriverStationLCD.Line.kUser1;
                 break;
             case 2:
-                l = DriverStationLCD.Line.kUser3;
+                l = DriverStationLCD.Line.kUser2;
                 break;
             case 3:
-                l = DriverStationLCD.Line.kUser4;
+                l = DriverStationLCD.Line.kUser3;
                 break;
             case 4:
-                l = DriverStationLCD.Line.kUser5;
+                l = DriverStationLCD.Line.kUser4;
                 break;
             case 5:
-                l = DriverStationLCD.Line.kUser6;
+                l = DriverStationLCD.Line.kUser5;
                 break;
             case 6:
-                l = DriverStationLCD.Line.kMain6;
+                l = DriverStationLCD.Line.kUser6;
                 break;
             default:
                 l = DriverStationLCD.Line.kUser2;
