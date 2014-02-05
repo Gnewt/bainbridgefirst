@@ -74,14 +74,18 @@ public class DriveTrain extends Subsystem {
      * Turns robot specified angle
     */
     public void turn(double angle) {
-        hasTurned = false;
-        double degreesOfFreedom = 2.0;
-        Robot.gyroscope.reset();
-        while (Robot.gyroscope.getAngle() <= angle - degreesOfFreedom) {
-            robotDrive.tankDrive(0.5, -0.5);
+        if (Robot.gyroscope != null) {
+            hasTurned = false;
+            double degreesOfFreedom = 2.0;
+            Robot.gyroscope.reset();
+            while (Robot.gyroscope.getAngle() <= angle - degreesOfFreedom) {
+                robotDrive.tankDrive(0.5, -0.5);
+            }
+            stop();
+            hasTurned = true;
+        } else {
+            System.out.println("No Gyro");
         }
-        stop();
-        hasTurned = true;
     }
     
     public boolean isTurned() {
