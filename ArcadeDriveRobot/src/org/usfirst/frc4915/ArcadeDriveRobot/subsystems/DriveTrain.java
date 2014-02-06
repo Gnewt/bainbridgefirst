@@ -106,4 +106,8 @@ public class DriveTrain extends Subsystem {
     public void setMaxOutput(double topSpeed) {
         robotDrive.setMaxOutput(topSpeed);
     }
+    
+    public void setSafetyEnabled(boolean safety) {
+        robotDrive.setSafetyEnabled(safety);
+    }
 }
