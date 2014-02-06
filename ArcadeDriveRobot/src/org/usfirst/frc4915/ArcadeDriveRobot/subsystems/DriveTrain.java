@@ -27,8 +27,6 @@ public class DriveTrain extends Subsystem {
     public double joystickThrottle;
     private double modifiedThrottle;
     private boolean hasTurned;
-
-
     // Whether robot is turning or not
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
