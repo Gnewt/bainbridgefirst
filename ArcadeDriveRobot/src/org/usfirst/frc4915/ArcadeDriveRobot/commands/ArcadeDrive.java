@@ -16,7 +16,7 @@ import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
  */
 public class  ArcadeDrive extends Command {
     public Joystick joystickDrive = Robot.oi.getJoystickDrive();
-    public double joystickThrottle = 0.45 * (-1.0 * joystickDrive.getAxis(Joystick.AxisType.kThrottle)) + 0.55;
+    public double joystickThrottle = Robot.driveTrain.modifyThrottle();
             // Makes our throttle from the original [-1,1] to [.1,1]
     
     public ArcadeDrive() {

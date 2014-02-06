@@ -54,7 +54,6 @@ public class DriveTrain extends Subsystem {
     public void arcadeDrive(Joystick stick) {
         //TODO: TEST!
         joystickThrottle = modifyThrottle();
-        Robot.driveTrain.setMaxOutput(joystickThrottle);
         robotDrive.arcadeDrive(stick);
     }
     
@@ -103,8 +102,9 @@ public class DriveTrain extends Subsystem {
     public double modifyThrottle() {
         modifiedThrottle = 0.45 * (-1.0 * Robot.oi.joystickDrive.getAxis(Joystick.AxisType.kThrottle)) + 0.55;
         if (modifiedThrottle != joystickThrottle) {
-            SmartDashboard.putNumber("kThrottle ", modifiedThrottle);
+            SmartDashboard.putNumber("Throttle: ", modifiedThrottle);
         }
+        setMaxOutput(modifiedThrottle);
         return modifiedThrottle;
     }
    
