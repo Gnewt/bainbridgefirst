@@ -73,6 +73,7 @@ public class Robot extends IterativeRobot {
         if (airCompressor != null) {
             airCompressor.start();
         }
+        driveTrain.setSafetyEnabled(false);
     }
     
     public void autonomousInit() {
@@ -105,7 +106,9 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putBoolean("Harvester Intake down", !harvester.getMagneticSwitchPneumatics()); // fully extended is false -> true
         SmartDashboard.putBoolean("Harvester Intake up", harvester.getMagneticSwitchPneumatics()); // fully retraced is true -> true
         //SmartDashboard.putNumber("Gyroscope", gyroscope.getAngle());
+        driveTrain.setSafetyEnabled(false);
     }
+    
     /**
      * This function is called periodically during operator control
      */
