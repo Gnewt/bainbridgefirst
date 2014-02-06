@@ -367,7 +367,7 @@ Children:
           name: Command
           type: Command
           validators: *id006
-          value: Harvester Wheels Forward
+          value: Harvester Wheels Back
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id007
           default: '1'
@@ -536,6 +536,6 @@ Properties:
     validators: null, value: 4915}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: /Users/ronnie/NetBeansProjects,
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: /Users/Tarkan/NetBeansProjects,
     extension: null, folder: true, name: Java Project Directory, validators: null,
     value: ./}
