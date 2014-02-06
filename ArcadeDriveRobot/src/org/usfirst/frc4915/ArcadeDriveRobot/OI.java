@@ -61,7 +61,7 @@ public class OI {
         joystickDrive = new Joystick(1);
         
         ejectBallButton = new JoystickButton(joystickDrive, 2);
-        ejectBallButton.whileHeld(new HarvesterWheelsForward());
+        ejectBallButton.whileHeld(new HarvesterWheelsBack());
         intakeUpButton = new JoystickButton(joystickDrive, 4);
         intakeUpButton.whenPressed(new IntakeUp());
         intakeDownButton = new JoystickButton(joystickDrive, 3);
