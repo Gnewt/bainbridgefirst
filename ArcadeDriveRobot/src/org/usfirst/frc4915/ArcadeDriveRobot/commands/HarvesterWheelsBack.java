@@ -14,6 +14,7 @@ import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
  * TODO: Finish code!
  */
 public class  HarvesterWheelsBack extends Command {
+    private boolean interruptionFinish = false;
     public HarvesterWheelsBack() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -31,7 +32,7 @@ public class  HarvesterWheelsBack extends Command {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return interruptionFinish;
     }
     // Called once after isFinished returns true
     protected void end() {
@@ -40,5 +41,6 @@ public class  HarvesterWheelsBack extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+        interruptionFinish = true;
     }
 }
