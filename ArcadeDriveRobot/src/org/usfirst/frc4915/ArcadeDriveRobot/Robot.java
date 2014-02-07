@@ -75,6 +75,9 @@ public class Robot extends IterativeRobot {
         }
         driveTrain.setSafetyEnabled(false);
         driveTrain.joystickThrottle = driveTrain.modifyThrottle();
+        
+        SmartDashboard.putData(Scheduler.getInstance());
+
     }
     
     public void autonomousInit() {
@@ -116,7 +119,6 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        SmartDashboard.putData("Scheduler:", Scheduler.getInstance());
     }
     /**
      * This function called periodically during test mode
