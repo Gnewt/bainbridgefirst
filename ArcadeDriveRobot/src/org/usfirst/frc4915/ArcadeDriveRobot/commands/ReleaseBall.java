@@ -26,7 +26,7 @@ public class  ReleaseBall extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
         if(Robot.harvester.getLimitSwitchBallLoaded() && Robot.harvester.getMagneticSwitchPneumatics()){ // the ball is loaded and the pneumatics are fully retracted
-            Robot.harvester.startWheels(-0.50); // kick the ball out
+            Robot.harvester.setWheelSpeed(-0.50); // kick the ball out
         }
     }
     // Called repeatedly when this Command is scheduled to run

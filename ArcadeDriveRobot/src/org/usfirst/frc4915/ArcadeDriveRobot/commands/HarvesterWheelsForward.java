@@ -25,7 +25,7 @@ public class  HarvesterWheelsForward extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.harvester.startWheels(0.5); // start wheels at half speed, forwards
+        Robot.harvester.setWheelSpeed(0.5); // start wheels at half speed, forwards
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {

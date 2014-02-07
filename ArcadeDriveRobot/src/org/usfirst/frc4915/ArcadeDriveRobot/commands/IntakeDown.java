@@ -25,7 +25,7 @@ public class  IntakeDown extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.harvester.startWheels(0.50);
+        Robot.harvester.setWheelSpeed(0.50);
         Robot.harvester.extendPneumatics();
     }
     // Called repeatedly when this Command is scheduled to run

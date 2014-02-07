@@ -55,7 +55,7 @@ public class Harvester extends Subsystem {
         collectionWheels.set(0.0);
     }
     
-    public void startWheels(double speed) {
+    public void setWheelSpeed(double speed) {
         collectionWheels.set(speed);
     }
 }
