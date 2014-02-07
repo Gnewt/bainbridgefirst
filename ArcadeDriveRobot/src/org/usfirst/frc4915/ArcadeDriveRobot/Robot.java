@@ -77,7 +77,6 @@ public class Robot extends IterativeRobot {
         driveTrain.joystickThrottle = driveTrain.modifyThrottle();
         
         SmartDashboard.putData(Scheduler.getInstance());
-
     }
     
     public void autonomousInit() {
