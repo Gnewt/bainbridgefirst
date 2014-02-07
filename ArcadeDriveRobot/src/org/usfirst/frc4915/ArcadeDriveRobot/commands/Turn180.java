@@ -15,6 +15,7 @@ import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
  */
 public class  Turn180 extends Command {
     
+    private double degreesOfFreedom;
     
     public Turn180() {
         // Use requires() here to declare subsystem dependencies
@@ -26,14 +27,16 @@ public class  Turn180 extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.driveTrain.turn(180.0);
+        Robot.gyroscope.reset();
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        Robot.driveTrain.turn();
     }
-    // Make this return true when this Command no longer needs to run execute()
+    // Checks whether Robot has turned within a certain number of degrees from 180
     protected boolean isFinished() {
-        return Robot.driveTrain.isTurned();
+        return (180.0-degreesOfFreedom < Robot.gyroscope.getAngle()) &&
+               (180.0+degreesOfFreedom > Robot.gyroscope.getAngle());
     }
     // Called once after isFinished returns true
     protected void end() {
