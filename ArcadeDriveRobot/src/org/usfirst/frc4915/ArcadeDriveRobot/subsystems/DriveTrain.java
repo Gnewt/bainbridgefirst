@@ -95,7 +95,7 @@ public class DriveTrain extends Subsystem {
     }
     
     public double modifyThrottle() {
-        modifiedThrottle = 0.45 * (-1.0 * Robot.oi.joystickDrive.getAxis(Joystick.AxisType.kThrottle)) + 0.55;
+        modifiedThrottle = 0.40 * (-1.0 * Robot.oi.joystickDrive.getAxis(Joystick.AxisType.kThrottle)) + 0.60;
         if (modifiedThrottle != joystickThrottle) {
             SmartDashboard.putNumber("Throttle: ", modifiedThrottle);
         }
