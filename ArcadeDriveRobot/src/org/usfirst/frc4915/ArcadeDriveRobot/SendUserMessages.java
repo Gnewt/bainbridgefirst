@@ -16,12 +16,7 @@ import edu.wpi.first.wpilibj.DriverStationLCD;
 
 /* This is a simple class to make sending messages to the Driver Station easier*/
 
-public class SendUserMessages {
-
-    public static void main(String[] args) {
-        
-    }
-    
+public class SendUserMessages {    
     /**
      *
      * @param line which line to print the message on
