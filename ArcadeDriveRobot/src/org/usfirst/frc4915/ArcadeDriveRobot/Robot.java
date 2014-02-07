@@ -109,7 +109,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putBoolean("Harvester Limit Switch is Ball Loaded: ", harvester.getLimitSwitchBallLoaded());
         SmartDashboard.putBoolean("Harvester Intake down", !harvester.getMagneticSwitchPneumatics()); // fully extended is false -> true
         SmartDashboard.putBoolean("Harvester Intake up", harvester.getMagneticSwitchPneumatics()); // fully retraced is true -> true
-        //SmartDashboard.putNumber("Gyroscope", gyroscope.getAngle());
+        SmartDashboard.putNumber("Gyroscope", gyroscope.getAngle());
         driveTrain.setSafetyEnabled(true);
     }
     
