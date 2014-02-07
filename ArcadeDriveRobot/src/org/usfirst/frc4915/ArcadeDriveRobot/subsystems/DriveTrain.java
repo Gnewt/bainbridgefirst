@@ -26,7 +26,6 @@ public class DriveTrain extends Subsystem {
     
     public double joystickThrottle;
     private double modifiedThrottle;
-    private boolean hasTurned;
     // Whether robot is turning or not
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -73,27 +72,15 @@ public class DriveTrain extends Subsystem {
     }
     /* turn
      *
-     * Turns robot specified angle
+     * Turns robot
     */
-    public void turn(double angle) {
+    public void turn() {
         if (Robot.gyroscope != null) {
-            hasTurned = false;
-            double degreesOfFreedom = 2.0;
-            Robot.gyroscope.reset();
-            while (Robot.gyroscope.getAngle() <= angle - degreesOfFreedom) {
-                robotDrive.tankDrive(0.5, -0.5);
-            }
-            stop();
-            hasTurned = true;
+            robotDrive.tankDrive(0.5, -0.5);
         } else {
             System.out.println("No Gyro");
         }
     }
-    
-    public boolean isTurned() {
-        return hasTurned;
-    }
-    
     public double modifyThrottle() {
         modifiedThrottle = 0.40 * (-1.0 * Robot.oi.joystickDrive.getAxis(Joystick.AxisType.kThrottle)) + 0.60;
         if (modifiedThrottle != joystickThrottle) {
