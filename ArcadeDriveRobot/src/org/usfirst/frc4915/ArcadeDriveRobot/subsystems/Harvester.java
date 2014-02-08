@@ -27,7 +27,7 @@ public class Harvester extends Subsystem {
     }
     
     public boolean getMagneticSwitchPneumatics() {
-        return magneticSwitch.get(); // is true if magnetic switch is near magnet // false if fully extended
+        return magneticSwitch.get(); // is false if magnetic switch is near magnet // true if fully extended
     }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
