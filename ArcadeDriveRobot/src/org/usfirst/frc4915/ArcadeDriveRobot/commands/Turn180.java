@@ -28,6 +28,10 @@ public class  Turn180 extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
         Robot.gyroscope.reset();
+        // set the max output of the motors
+        Robot.driveTrain.setMaxOutput(0.5);
+        // set safety timeout
+        setTimeout(6.0);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -35,10 +39,8 @@ public class  Turn180 extends Command {
     }
     // Checks whether Robot has turned within a certain number of degrees from 180
     protected boolean isFinished() {
-        return ((180.0-degreesOfFreedom < Robot.gyroscope.getAngle()) &&
-               (180.0+degreesOfFreedom > Robot.gyroscope.getAngle())) ||
-               ((-180.0-degreesOfFreedom < Robot.gyroscope.getAngle()) &&
-               (-180.0+degreesOfFreedom > Robot.gyroscope.getAngle()));
+        return ((180.0-degreesOfFreedom < Robot.gyroscope.getAngle()) ||
+               (-180.0+degreesOfFreedom > Robot.gyroscope.getAngle()) || isTimedOut());
     }
     // Called once after isFinished returns true
     protected void end() {
