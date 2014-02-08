@@ -76,7 +76,7 @@ public class DriveTrain extends Subsystem {
     */
     public void turn() {
         if (Robot.gyroscope != null) {
-            robotDrive.tankDrive(0.5, -0.5);
+            robotDrive.tankDrive(-modifiedThrottle, modifiedThrottle);
         } else {
             System.out.println("No Gyro");
         }

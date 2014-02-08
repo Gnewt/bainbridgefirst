@@ -76,7 +76,7 @@ public class Robot extends IterativeRobot {
         driveTrain.setSafetyEnabled(false);
         driveTrain.joystickThrottle = driveTrain.modifyThrottle();
         
-        SmartDashboard.putData(Scheduler.getInstance());
+
     }
     
     public void autonomousInit() {
@@ -99,18 +99,6 @@ public class Robot extends IterativeRobot {
         if (autonomousCommand != null) {
             autonomousCommand.cancel();
         }
-        SmartDashboard.putBoolean("Pressure Switch", RobotMap.airCompressorCompressor.getPressureSwitchValue());
-        // Makes our throttle from the original [-1,1] to [.1,1]
-        // SmartDashboard.putNumber("Z Axis ", oi.joystickDrive.getAxis(Joystick.AxisType.kZ)); // Attack Joystick Throttle
-        
-        SmartDashboard.putBoolean("Gearbox Pneumatics", launcher.getStatePneumatics());
-        SmartDashboard.putBoolean("Magnetic Switch value:", harvester.getMagneticSwitchPneumatics());
-        
-        SmartDashboard.putBoolean("Harvester Limit Switch is Ball Loaded: ", harvester.getLimitSwitchBallLoaded());
-        SmartDashboard.putBoolean("Harvester Intake down", !harvester.getMagneticSwitchPneumatics()); // fully extended is false -> true
-        SmartDashboard.putBoolean("Harvester Intake up", harvester.getMagneticSwitchPneumatics()); // fully retraced is true -> true
-        
-        SmartDashboard.putNumber("Gyroscope", gyroscope.getAngle());
     }
     
     /**
@@ -118,6 +106,18 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        SmartDashboard.putBoolean("Pressure Switch", RobotMap.airCompressorCompressor.getPressureSwitchValue());
+        
+        SmartDashboard.putBoolean("Gearbox Pneumatics", launcher.getStatePneumatics());
+        
+        SmartDashboard.putBoolean("Magnetic Switch value:", harvester.getMagneticSwitchPneumatics());
+        SmartDashboard.putBoolean("Harvester Limit Switch is Ball Loaded: ", harvester.getLimitSwitchBallLoaded());
+        //SmartDashboard.putBoolean("Harvester Intake down", !harvester.getMagneticSwitchPneumatics()); // fully extended is false -> true
+        //SmartDashboard.putBoolean("Harvester Intake up", harvester.getMagneticSwitchPneumatics()); // fully retraced is true -> true
+        
+        SmartDashboard.putNumber("Gyroscope", gyroscope.getAngle());
+        
+        SmartDashboard.putData(Scheduler.getInstance());
     }
     /**
      * This function called periodically during test mode
