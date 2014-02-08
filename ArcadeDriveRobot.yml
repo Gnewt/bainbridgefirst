@@ -343,7 +343,7 @@ Children:
           name: Command
           type: Command
           validators: *id006
-          value: Harvester Wheels Back
+          value: IntakeRelease
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id007
           default: '1'
@@ -522,6 +522,14 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   - Name: Stop Harvester Wheels
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Harvester}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: IntakeRelease
     Base: Command
     Children: []
     Properties:
