@@ -15,8 +15,9 @@ import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
  *
  */
 public class  ArcadeDrive extends Command {
-    public Joystick joystickDrive = Robot.oi.getJoystickDrive();
-    public double joystickThrottle = Robot.driveTrain.modifyThrottle();
+    public Joystick joystickDrive; 
+    private double joystickX;
+    private double joystickY;
             // Makes our throttle from the original [-1,1] to [.1,1]
     
     public ArcadeDrive() {
@@ -32,7 +33,16 @@ public class  ArcadeDrive extends Command {
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.driveTrain.arcadeDrive(Robot.oi.getJoystickDrive());
+        joystickDrive = Robot.oi.getJoystickDrive();
+        joystickX = joystickDrive.getAxis(Joystick.AxisType.kX);
+        joystickY = joystickDrive.getAxis(Joystick.AxisType.kY);
+        if ((Math.abs(joystickX) < 0.075) && (Math.abs(joystickY) < 0.075)) {
+            Robot.driveTrain.stop();
+        }
+        else {
+            Robot.driveTrain.arcadeDrive(joystickDrive);
+        }
+        
         
     }
     // Make this return true when this Command no longer needs to run execute()

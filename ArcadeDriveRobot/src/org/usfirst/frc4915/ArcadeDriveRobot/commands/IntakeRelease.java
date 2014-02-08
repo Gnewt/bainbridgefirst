@@ -26,11 +26,11 @@ public class  IntakeRelease extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
         setTimeout(6.0);
-        System.out.println("Running ReleaseBall...");
+        System.out.println("Running IntakeRelease...");
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.harvester.setWheelSpeed(0.50);
+        Robot.harvester.setWheelSpeed(Robot.harvester.getHarvesterSpeed(Robot.harvester.EXPEL));
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
@@ -39,7 +39,7 @@ public class  IntakeRelease extends Command {
     // Called once after isFinished returns true
     protected void end() {
         Robot.harvester.stopWheels();
-        System.out.println("ReleaseBall done.");
+        System.out.println("IntakeRelease done.");
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
