@@ -96,8 +96,8 @@ public class DriveTrain extends Subsystem {
     
     // Modifiers to scale the PID control.
     // TODO: Determine the optimal PID control values.
-    private static final double PROPORTIONAL_RATIO = .5;
-    private static final double INTEGRAL_RATIO = .1;
+    private static final double PROPORTIONAL_RATIO = .01;
+    private static final double INTEGRAL_RATIO = .00005;
     private static final double DERIVATIVE_RATIO = .01;
     
     private double error; //The difference between the desired angle (the setpoint) and the current angle
@@ -141,7 +141,7 @@ public class DriveTrain extends Subsystem {
         // Drive at the outputed speed.
         robotDrive.tankDrive(motorSpeed, -motorSpeed);
         
-        if (((lastError - error) <= .001) || ((lastError - error) >= -.001)) {
+        if (((lastError - error) <= 0.05) && ((lastError - error) >= -0.05)) {
             return true;
         }
         lastError = error;
