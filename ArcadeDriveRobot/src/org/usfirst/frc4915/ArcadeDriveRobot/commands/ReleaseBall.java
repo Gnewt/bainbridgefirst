@@ -26,6 +26,7 @@ public class  ReleaseBall extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
         setTimeout(2.0);
+        System.out.println("Running ReleaseBall...");
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -38,6 +39,7 @@ public class  ReleaseBall extends Command {
     // Called once after isFinished returns true
     protected void end() {
         Robot.harvester.stopWheels();
+        System.out.println("ReleaseBall done.");
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
