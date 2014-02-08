@@ -75,11 +75,7 @@ public class DriveTrain extends Subsystem {
      * Turns robot
     */
     public void turn() {
-        if (Robot.gyroscope != null) {
             robotDrive.tankDrive(1.0, -1.0);
-        } else {
-            System.out.println("No Gyro");
-        }
     }
     public double modifyThrottle() {
         modifiedThrottle = 0.40 * (-1.0 * Robot.oi.joystickDrive.getAxis(Joystick.AxisType.kThrottle)) + 0.60;
@@ -96,5 +92,65 @@ public class DriveTrain extends Subsystem {
     
     public void setSafetyEnabled(boolean safety) {
         robotDrive.setSafetyEnabled(safety);
+    }
+    
+    // Modifiers to scale the PID control.
+    // TODO: Determine the optimal PID control values.
+    private static final double PROPORTIONAL_RATIO = .5;
+    private static final double INTEGRAL_RATIO = .1;
+    private static final double DERIVATIVE_RATIO = .01;
+    
+    private double error; //The difference between the desired angle (the setpoint) and the current angle
+    private double lastError; // The previous error. Must be reset to 0 before begining the turning process.
+    
+    private double proportional, integral, derivative; // These will sum to how fast the motors should spin
+    
+    private static final double MOTOR_MAX_SPEED = 1;
+    
+    /**
+     * turnPID(double angle)
+     * 
+     * Turns the robot angle degrees using a PID algorithm.
+     * 
+     * Prerequisites: Must have the gyroscope reset before usage.
+     * TIP: Call DriveTrain.resetPIDValues() in the initiate method of the turning command using this code.
+    */
+    public void turnPID(double angle) {
+        if (Robot.gyroscope == null) {
+            System.out.println("Gyroscope not connected");
+            return;
+        }
+        // Calculate the current error
+        error = angle - Robot.gyroscope.getAngle();
+        
+        // Calculate proportional, integral and derivative components
+        proportional = PROPORTIONAL_RATIO * error;
+        integral += INTEGRAL_RATIO * error;
+        derivative = DERIVATIVE_RATIO * (lastError - error)/2;
+        // Sum the components to determine the driving speed
+        double motorSpeed = proportional + integral + derivative;
+        // Ensure that the driving speed isn't too fast.
+        if (motorSpeed > MOTOR_MAX_SPEED) {
+            motorSpeed = MOTOR_MAX_SPEED;
+        }
+        if (motorSpeed < -MOTOR_MAX_SPEED) {
+            motorSpeed = -MOTOR_MAX_SPEED;
+        }
+        // Drive at the outputed speed.
+        robotDrive.tankDrive(motorSpeed, -motorSpeed);
+    }
+    
+    
+    public void resetPIDValues() {
+        if (Robot.gyroscope == null) {
+            System.out.println("Gyroscope not connected");
+            return;
+        }
+        Robot.gyroscope.reset();
+        error = 0;
+        lastError = 0;
+        proportional = 0;
+        integral = 0;
+        derivative = 0;
     }
 }

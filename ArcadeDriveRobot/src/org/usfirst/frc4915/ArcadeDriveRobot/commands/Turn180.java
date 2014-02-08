@@ -27,6 +27,9 @@ public class  Turn180 extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        if (Robot.gyroscope == null) {
+            end();
+        }
         Robot.gyroscope.reset();
         // set the max output of the motors
         Robot.driveTrain.setMaxOutput(0.5);
