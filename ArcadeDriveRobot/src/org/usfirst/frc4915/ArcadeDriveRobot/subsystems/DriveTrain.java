@@ -111,14 +111,16 @@ public class DriveTrain extends Subsystem {
      * turnPID(double angle)
      * 
      * Turns the robot angle degrees using a PID algorithm.
+     * @param angle: The angle in degrees that the gyroscope should read at the end of the turn. For fastest results, make it between -180 and 180.
+     * @return true when the setpoint has been reached.
      * 
      * Prerequisites: Must have the gyroscope reset before usage.
      * TIP: Call DriveTrain.resetPIDValues() in the initiate method of the turning command using this code.
     */
-    public void turnPID(double angle) {
+    public boolean turnPID(double angle) {
         if (Robot.gyroscope == null) {
             System.out.println("Gyroscope not connected");
-            return;
+            return true; // This way the command will exit rather than runs forever
         }
         // Calculate the current error
         error = angle - Robot.gyroscope.getAngle();
@@ -138,8 +140,13 @@ public class DriveTrain extends Subsystem {
         }
         // Drive at the outputed speed.
         robotDrive.tankDrive(motorSpeed, -motorSpeed);
+        
+        if (((lastError - error) <= .001) || ((lastError - error) >= -.001)) {
+            return true;
+        }
+        lastError = error;
+        return false; // The command will be called again by its command.
     }
-    
     
     public void resetPIDValues() {
         if (Robot.gyroscope == null) {
