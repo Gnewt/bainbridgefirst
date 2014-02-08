@@ -76,7 +76,6 @@ public class Robot extends IterativeRobot {
         driveTrain.setSafetyEnabled(false);
         driveTrain.joystickThrottle = driveTrain.modifyThrottle();
         
-
     }
     
     public void autonomousInit() {
