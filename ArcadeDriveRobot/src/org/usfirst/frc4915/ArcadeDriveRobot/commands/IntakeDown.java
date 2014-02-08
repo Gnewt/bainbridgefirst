@@ -26,6 +26,7 @@ public class  IntakeDown extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
         Robot.harvester.extendPneumatics();
+        System.out.println("Starting IntakeDown...");
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -37,6 +38,7 @@ public class  IntakeDown extends Command {
     }
     // Called once after isFinished returns true
     protected void end() {
+        System.out.println("IntakeDown done.");
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
