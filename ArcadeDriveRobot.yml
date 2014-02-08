@@ -357,7 +357,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
     - Name: Stop Harvester Wheels Button
       Base: Joystick Button
       Children: []
