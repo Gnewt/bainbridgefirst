@@ -70,6 +70,9 @@ public class Robot extends IterativeRobot {
         if (airCompressor != null) {
             airCompressor.start();
         }
+        if (harvester != null) {
+            harvester.retractPneumatics();
+        }
         driveTrain.joystickThrottle = driveTrain.modifyThrottle();
         
     }
