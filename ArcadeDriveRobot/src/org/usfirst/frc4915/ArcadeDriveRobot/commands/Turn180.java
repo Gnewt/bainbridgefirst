@@ -16,7 +16,7 @@ import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
  */
 public class  Turn180 extends Command {
     
-    private double degreesOfFreedom = 2.0;
+    private final double degreesOfFreedom = 2.0;
     
     //private boolean shouldQuit;
     
