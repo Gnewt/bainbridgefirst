@@ -96,9 +96,9 @@ public class DriveTrain extends Subsystem {
     
     // Modifiers to scale the PID control.
     // TODO: Determine the optimal PID control values.
-    private static final double PROPORTIONAL_RATIO = .01;
-    private static final double INTEGRAL_RATIO = .00005;
-    private static final double DERIVATIVE_RATIO = .01;
+    private static final double PROPORTIONAL_RATIO = .02;
+    private static final double INTEGRAL_RATIO = .00002;
+    private static final double DERIVATIVE_RATIO = .05;
     
     private double error; //The difference between the desired angle (the setpoint) and the current angle
     private double lastError; // The previous error. Must be reset to 0 before begining the turning process.
@@ -119,6 +119,7 @@ public class DriveTrain extends Subsystem {
     */
     public boolean turnPID(double angle) {
         if (Robot.gyroscope == null) {
+            robotDrive.tankDrive(0, 0);
             System.out.println("Gyroscope not connected");
             return true; // This way the command will exit rather than runs forever
         }
@@ -128,7 +129,7 @@ public class DriveTrain extends Subsystem {
         // Calculate proportional, integral and derivative components
         proportional = PROPORTIONAL_RATIO * error;
         integral += INTEGRAL_RATIO * error;
-        derivative = DERIVATIVE_RATIO * (lastError - error)/2;
+        derivative = DERIVATIVE_RATIO * (lastError - error);
         // Sum the components to determine the driving speed
         double motorSpeed = proportional + integral + derivative;
         // Ensure that the driving speed isn't too fast.
@@ -138,26 +139,27 @@ public class DriveTrain extends Subsystem {
         if (motorSpeed < -MOTOR_MAX_SPEED) {
             motorSpeed = -MOTOR_MAX_SPEED;
         }
-        // Drive at the outputed speed.
-        robotDrive.tankDrive(motorSpeed, -motorSpeed);
         
-        if (((lastError - error) <= 0.05) && ((lastError - error) >= -0.05)) {
+        if (Math.abs(error) < 5) { //If we are within 5 degrees of our result, it should stop.
+            robotDrive.tankDrive(0, 0);
             return true;
         }
+        
+        // Drive at the outputed speed.
+        robotDrive.tankDrive(motorSpeed, -motorSpeed);
+
         lastError = error;
         return false; // The command will be called again by its command.
     }
     
     public void resetPIDValues() {
-        if (Robot.gyroscope == null) {
-            System.out.println("Gyroscope not connected");
-            return;
-        }
-        Robot.gyroscope.reset();
         error = 0;
         lastError = 0;
         proportional = 0;
         integral = 0;
         derivative = 0;
+        if (Robot.gyroscope != null) {
+            Robot.gyroscope.reset();
+        }
     }
 }
