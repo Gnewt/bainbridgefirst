@@ -46,8 +46,6 @@ public class DriveTrain extends Subsystem {
      * @param stick A joystick.
      */
     public void arcadeDrive(Joystick stick) {
-        //TODO: TEST!
-        joystickThrottle = modifyThrottle();
         robotDrive.arcadeDrive(stick);
     }
     
