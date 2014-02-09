@@ -12,7 +12,7 @@ package org.usfirst.frc4915.ArcadeDriveRobot;
  */
 public class Version {
     
-    private static final String VERSION = "v1.08.09";;
+    private static final String VERSION = "v1.08.10";;
     // Adds IntakeDown and IntakeUp commands
     // Adds Magnetic Switch
     // Changed buttons on Joystick to activate the Intake Down and Intake Up instead of Extend/Retract Pneumatics
@@ -21,6 +21,7 @@ public class Version {
     // Testable turnPID(angle)
     // Version system changed
     // PID ratios altered
+    // Throttle values updated when robot is stopped
     
     public static String getVersion() {
         return VERSION;
