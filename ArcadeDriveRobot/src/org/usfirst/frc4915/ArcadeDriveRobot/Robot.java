@@ -73,7 +73,7 @@ public class Robot extends IterativeRobot {
         if (airCompressor != null) {
             airCompressor.start();
         }
-        driveTrain.setSafetyEnabled(false);
+        
         driveTrain.joystickThrottle = driveTrain.modifyThrottle();
         
     }
@@ -117,6 +117,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putNumber("Gyroscope", gyroscope.getAngle());
         
         SmartDashboard.putData(Scheduler.getInstance());
+        
         
         batteryVoltage = driverStation.getBatteryVoltage();
         SmartDashboard.putNumber("BatteryVoltage: ", batteryVoltage);
