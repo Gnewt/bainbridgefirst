@@ -147,7 +147,6 @@ public class DriveTrain extends Subsystem {
         
         // Drive at the outputed speed.
         robotDrive.tankDrive(motorSpeed, -motorSpeed);
-
         lastError = error;
         return false; // The command will be called again by its command.
     }

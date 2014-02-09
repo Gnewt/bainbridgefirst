@@ -15,7 +15,6 @@ import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
  *
  */
 public class  PIDTurn180 extends Command {
-
     
     private boolean shouldQuit;
     

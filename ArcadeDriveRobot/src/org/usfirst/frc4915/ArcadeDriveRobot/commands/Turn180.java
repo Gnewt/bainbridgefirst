@@ -20,6 +20,8 @@ public class  Turn180 extends Command {
     
     private boolean shouldQuit;
     
+    private static final double MINIMUM_SPEED = 0.4;
+    
     public Turn180() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -38,8 +40,6 @@ public class  Turn180 extends Command {
         }
         shouldQuit = false;
         Robot.gyroscope.reset();
-        // set the max output of the motors
-        Robot.driveTrain.setMaxOutput(0.5);
         // set safety timeout
         setTimeout(6.0);
         System.out.println("Began 180 turn");
@@ -57,15 +57,27 @@ public class  Turn180 extends Command {
         shouldQuit = Robot.driveTrain.turnPID(180.0);
         */
         if (shouldQuit == false) {
-            System.out.println("Turning");
+            // Angle goes negative as we turn with driveTrain.turn()
+            double currentAngle = Robot.gyroscope.getAngle();
+            
+            double motorSpeed = 1.5 + currentAngle/135;
+            if (motorSpeed <= MINIMUM_SPEED) {
+                motorSpeed = MINIMUM_SPEED;
+            }
+            else if (motorSpeed > 1.0) {
+                motorSpeed = 1.0;
+            }
+            
+            Robot.driveTrain.setMaxOutput(motorSpeed);
+            System.out.println("Turning at "+motorSpeed);
             Robot.driveTrain.turn();
         }
     }
     // Checks whether Robot has turned within a certain number of degrees from 180
     protected boolean isFinished() {
         if (shouldQuit) return true;
-        return ((170.0-degreesOfFreedom < Robot.gyroscope.getAngle()) ||
-             (-170.0+degreesOfFreedom > Robot.gyroscope.getAngle()) || isTimedOut());
+        return ((165.0-degreesOfFreedom < Robot.gyroscope.getAngle()) ||
+             (-165.0+degreesOfFreedom > Robot.gyroscope.getAngle()) || isTimedOut());
         /*if (isTimedOut()) {
             return true;
         }
