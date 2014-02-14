@@ -508,30 +508,6 @@ Children:
           name: When to Run
           validators: null
           value: whenPressed
-    - Name: TEMP Shoot Launcher Button
-      Base: Joystick Button
-      Children: []
-      Properties:
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id022
-          value: Loosen Gearbox Pneumatics
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id023
-          default: '1'
-          name: Button
-          validators: null
-          value: '1'
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: Secondary Joystick}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id024
-          default: whileHeld
-          name: When to Run
-          validators: null
-          value: whenPressed
     - Name: TEMP Reset Launcher Button
       Base: Joystick Button
       Children: []
