@@ -8,9 +8,12 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 package org.usfirst.frc4915.ArcadeDriveRobot.subsystems;
-import org.usfirst.frc4915.ArcadeDriveRobot.RobotMap;
-import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import org.usfirst.frc4915.ArcadeDriveRobot.RobotMap;
 /**
  *
  */
@@ -36,8 +39,8 @@ public class Launcher extends Subsystem {
      * 
      * Pushes the pneumatic cylinder out
      */
-    public void pneumaticsOn() {
-        gearboxPneumatics.set(true);
+    public void pneumaticsForward() {
+        pneumaticPistonDoubleSolenoid.set(DoubleSolenoid.Value.kForward);
     }
   
     /**
@@ -46,16 +49,7 @@ public class Launcher extends Subsystem {
      * Stops filling the cylinder. Will not retract it, but will allow it to be pushed back
      */
     public void pneumaticsStop() {
-        gearboxPneumatics.set(false);
-    }
-    
-    /**
-     * getStatePneumatics
-     * 
-     * @return the state of gearboxPneumatics
-     */
-    public boolean getStatePneumatics() {
-        return gearboxPneumatics.get();
+        pneumaticPistonDoubleSolenoid.set(DoubleSolenoid.Value.kOff);
     }
       
     public void startWindingMotor(double speed){

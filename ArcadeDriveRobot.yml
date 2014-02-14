@@ -155,7 +155,7 @@ Children:
           name: Input Module (Digital)
           validators: &id021 [DigitalChannel]
           value: '1'
-    - Name: Magnetic Switch at Bottom
+    - Name: Magnetic Switch Bottom
       Base: Digital Input
       Children: []
       Properties:
@@ -172,7 +172,7 @@ Children:
           name: Input Module (Digital)
           validators: &id009 [DigitalChannel]
           value: '1'
-    - Name: Magnetic Switch at Top
+    - Name: Magnetic Switch Top
       Base: Digital Input
       Children: []
       Properties:
@@ -517,7 +517,7 @@ Children:
           name: Command
           type: Command
           validators: *id022
-          value: Loosen Gearbox Pmtc
+          value: Loosen Gearbox Pneumatics
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id023
           default: '1'
@@ -639,7 +639,7 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Drive Train}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
-  - Name: Retract Gearbox Pmtc
+  - Name: Retract Gearbox Pneumatics
     Base: Command
     Children: []
     Properties:
@@ -647,7 +647,7 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Launcher}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
-  - Name: Loosen Gearbox Pmtc
+  - Name: Loosen Gearbox Pneumatics
     Base: Command
     Children: []
     Properties:

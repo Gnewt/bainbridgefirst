@@ -69,7 +69,7 @@ public class OI {
         tEMPResetLauncherButton = new JoystickButton(secondaryJoystick, 1);
         tEMPResetLauncherButton.whenPressed(new WindLauncher());
         tEMPShootLauncherButton = new JoystickButton(secondaryJoystick, 1);
-        tEMPShootLauncherButton.whenPressed(new LoosenGearboxPmtc());
+        tEMPShootLauncherButton.whenPressed(new LoosenGearboxPneumatics());
         secondaryIntakeDown = new JoystickButton(secondaryJoystick, 6);
         secondaryIntakeDown.whenPressed(new IntakeDown());
         secondaryIntakeUp = new JoystickButton(secondaryJoystick, 7);
