@@ -61,4 +61,8 @@ public class Launcher extends Subsystem {
     public double getWindingSpeed() {
         return windingMotor.get();
     }
+    
+    public boolean getLimitSwitchForLauncherDownValue(){
+        return limitSwitchForLauncherDown.get();
+    }
 }
