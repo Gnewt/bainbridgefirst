@@ -63,11 +63,11 @@ public class Harvester extends Subsystem {
         return testForBall.get(); // true if ball is inside the loader and intake is complete
     }
     
-    public boolean isLauncherDown() {
+    public boolean isHarvesterDown() {
         return magneticSwitchBottom.get(); // is false if magnetic switch is near magnet -- fully retracted // true if extended at all
     }
     
-    public boolean isLauncherUp() {
+    public boolean isHarvesterUp() {
         return magneticSwitchTop.get(); // is false if magnetic switch is near magnet  -- fully extended // true if retracted at all
     }
     

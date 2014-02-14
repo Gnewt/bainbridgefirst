@@ -34,7 +34,7 @@ public class  IntakeDown extends Command {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.harvester.isLauncherDown();
+        return Robot.harvester.isHarvesterDown();
     }
     // Called once after isFinished returns true
     protected void end() {

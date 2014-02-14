@@ -28,12 +28,12 @@ public class  WindLauncher extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        if (Robot.harvester.isLauncherUp()) {
+        if (Robot.harvester.isHarvesterUp()) {
             setTimeout(0);
             shouldQuit = true;
         }
         else {
-            setTimeout(8);
+            setTimeout(3);
         }
     }
     // Called repeatedly when this Command is scheduled to run
