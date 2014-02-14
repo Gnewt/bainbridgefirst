@@ -25,8 +25,7 @@ public class  WindLauncher extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        setTimeout(10);
-       
+         setTimeout(8);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -34,7 +33,7 @@ public class  WindLauncher extends Command {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return isTimedOut();
+        return (isTimedOut() || Robot.launcher.getLimitSwitchForLauncherDownValue());
     }
     // Called once after isFinished returns true
     protected void end() {
