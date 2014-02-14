@@ -12,7 +12,7 @@ package org.usfirst.frc4915.ArcadeDriveRobot;
  */
 public class Version {
     
-    private static final String VERSION = "v1.08.10";;
+    private static final String VERSION = "v1.09.00";
     // Adds IntakeDown and IntakeUp commands
     // Adds Magnetic Switch
     // Changed buttons on Joystick to activate the Intake Down and Intake Up instead of Extend/Retract Pneumatics

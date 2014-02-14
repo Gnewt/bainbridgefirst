@@ -33,7 +33,7 @@ public class  IntakeUp extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         Robot.harvester.setWheelSpeed(Robot.harvester.getHarvesterSpeed(Robot.harvester.INTAKE));
-        if(!Robot.harvester.getMagneticSwitchPneumatics() && (timerSet == false)){
+        if(!Robot.harvester.getMagneticSwitchPneumaticsBottom() && (timerSet == false)){
             setTimeout(2.0);
             timerSet = true;
         }

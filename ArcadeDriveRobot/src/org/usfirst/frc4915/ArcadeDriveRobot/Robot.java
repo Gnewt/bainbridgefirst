@@ -105,9 +105,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         SmartDashboard.putBoolean("Pressure Switch", RobotMap.airCompressorCompressor.getPressureSwitchValue());
-        
-        SmartDashboard.putBoolean("Gearbox Pneumatics", launcher.getStatePneumatics());
-        
+                
         //SmartDashboard.putBoolean("Magnetic Switch value:", harvester.getMagneticSwitchPneumatics());
         SmartDashboard.putBoolean("Harvester Limit Switch is Ball Loaded: ", harvester.getLimitSwitchBallLoaded());
         //SmartDashboard.putBoolean("Harvester Intake down", !harvester.getMagneticSwitchPneumatics()); // fully extended is false -> true
