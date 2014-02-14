@@ -51,6 +51,10 @@ public class Launcher extends Subsystem {
     public void pneumaticsStop() {
         pneumaticPistonDoubleSolenoid.set(DoubleSolenoid.Value.kOff);
     }
+    
+    public void pneumaticsReverse() {
+        pneumaticPistonDoubleSolenoid.set(DoubleSolenoid.Value.kReverse);
+    }
       
     public void startWindingMotor(double speed){
         windingMotor.set(speed);
