@@ -24,8 +24,9 @@ public class  LoosenGearboxPneumatics extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        setTimeout(1.0);
+        setTimeout(3.0);
         Robot.launcher.pneumaticsForward();
+        System.out.println("Pushing Pneumatics");
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {

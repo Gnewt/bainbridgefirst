@@ -24,8 +24,9 @@ public class  RetractGearboxPneumatics extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        setTimeout(1.0);
-        Robot.launcher.pneumaticsStop();
+        setTimeout(3.0);
+        Robot.launcher.pneumaticsReverse();
+        System.out.println("Reversing Pneumatics");
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
