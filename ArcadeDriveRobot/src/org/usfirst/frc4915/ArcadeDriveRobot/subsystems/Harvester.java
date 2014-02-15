@@ -64,11 +64,11 @@ public class Harvester extends Subsystem {
     }
     
     public boolean isHarvesterDown() {
-        return magneticSwitchBottom.get(); // is false if magnetic switch is near magnet -- fully retracted // true if extended at all
+        return !(magneticSwitchTop.get()); // is false if magnetic switch is near magnet -- fully retracted // true if extended at all
     }
     
     public boolean isHarvesterUp() {
-        return magneticSwitchTop.get(); // is false if magnetic switch is near magnet  -- fully extended // true if retracted at all
+        return !(magneticSwitchBottom.get()); // is false if magnetic switch is near magnet  -- fully extended // true if retracted at all
     }
     
     // Put methods for controlling this subsystem

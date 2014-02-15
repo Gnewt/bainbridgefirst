@@ -508,7 +508,7 @@ Children:
           name: When to Run
           validators: null
           value: whenPressed
-    - Name: TEMP Reset Launcher Button
+    - Name: Launch Command Group  Button
       Base: Joystick Button
       Children: []
       Properties:
@@ -517,13 +517,13 @@ Children:
           name: Command
           type: Command
           validators: *id022
-          value: Wind Launcher
+          value: Launch Command Group
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id023
           default: '1'
           name: Button
           validators: null
-          value: '1'
+          value: '10'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Secondary Joystick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -543,6 +543,12 @@ Children:
 - Name: Commands
   Base: Commands
   Children:
+  - Name: Launch Command Group
+    Base: Command Group
+    Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: false}
   - Name: Autonomous Command
     Base: Command
     Children: []
@@ -671,6 +677,14 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Drive Train}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Launch
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Launcher}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
   - Name: Wind Command Group
     Base: Command Group
     Children: []
@@ -696,6 +710,6 @@ Properties:
     validators: null, value: 4915}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: /Users/ronnie/NetBeansProjects,
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Ben\NetBeansProjects',
     extension: null, folder: true, name: Java Project Directory, validators: null,
     value: ./}

@@ -25,11 +25,20 @@ public class  IntakeDown extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.harvester.extendPneumatics();
-        System.out.println("Starting IntakeDown...");
+        if(Robot.harvester.isHarvesterDown() == false)
+        {
+            Robot.harvester.extendPneumatics();
+            System.out.println("Starting IntakeDown...");
+        }
+        else
+        {
+            System.out.println("Harvester is already down");
+        }
+        
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        
         Robot.harvester.setWheelSpeed(Robot.harvester.getHarvesterSpeed(Robot.harvester.INTAKE));
     }
     // Make this return true when this Command no longer needs to run execute()
