@@ -18,8 +18,12 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class LaunchCommandGroup extends CommandGroup {
     
     public  LaunchCommandGroup() {
+        System.out.println("Starting Launch Command Group");
+        addSequential(new WindCommandGroup());
+        addSequential(new Launch());
+        addSequential(new WindCommandGroup());
+        System.out.println("Finished Launch Command Group");
         
-       
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

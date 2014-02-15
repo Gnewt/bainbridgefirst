@@ -25,6 +25,7 @@ public class  AutonomousCommand extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        System.out.println("Autonomous START");
         setTimeout(2.0);
         Robot.driveTrain.setMaxOutput(0.40);
     }

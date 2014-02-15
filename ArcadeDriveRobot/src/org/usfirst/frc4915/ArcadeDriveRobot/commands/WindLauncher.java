@@ -15,7 +15,7 @@ import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
  */
 public class  WindLauncher extends Command {
     
-    private boolean shouldQuit = false;
+    private boolean shouldQuit;
     
     public WindLauncher() {
         // Use requires() here to declare subsystem dependencies
@@ -28,9 +28,18 @@ public class  WindLauncher extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        if (Robot.harvester.isHarvesterUp()) {
-            setTimeout(0);
+        System.out.println("WindLauncher initialized");
+        Robot.launcher.pneumaticsReverse();
+        shouldQuit = false;
+        // do not wind if already wound
+        if (Robot.launcher.getLimitSwitchForLauncherDownValue()) {
             shouldQuit = true;
+            return;
+        }
+        // do not wind if harvester is up
+        if (Robot.harvester.isHarvesterUp()) {
+            shouldQuit = true;
+            return;
         }
         else {
             setTimeout(3);
@@ -47,15 +56,18 @@ public class  WindLauncher extends Command {
         if (shouldQuit) {
             return true;
         }
+        
         return (isTimedOut() || Robot.launcher.getLimitSwitchForLauncherDownValue());
     }
     // Called once after isFinished returns true
     protected void end() {
+        System.out.println("WindLauncher end");
         Robot.launcher.stopWindingMotor();
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+        System.out.println("WindLauncher has been interrupted");
         end();
     }
 }
