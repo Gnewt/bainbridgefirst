@@ -60,6 +60,10 @@ public class DriveTrain extends Subsystem {
         robotDrive.tankDrive(speed, speed);
     }
     
+    public void drive(double speed, double angle) {
+        robotDrive.drive(speed, angle);
+    }
+    
     /** stop
      * 
      * public method to stop the drive train
