@@ -20,7 +20,8 @@ public class AutonomousCommandGroup extends CommandGroup {
     public  AutonomousCommandGroup() {
         
         addSequential(new DriveStraight());
-        addSequential(new Launch());
+        addSequential(new LaunchCommandGroup());
+        
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
