@@ -233,7 +233,7 @@ Children:
           default: '1'
           name: Output Channel (PWM)
           validators: *id005
-          value: '5'
+          value: '6'
     - Name: Pneumatic Piston Double Solenoid
       Base: Double Solenoid
       Children: []
