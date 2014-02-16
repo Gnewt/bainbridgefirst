@@ -31,24 +31,19 @@ public class  WindLauncher extends Command {
         System.out.println("WindLauncher initialized");
         Robot.launcher.pneumaticsReverse();
         shouldQuit = false;
-        // do not wind if already wound
-        if (Robot.launcher.getLimitSwitchForLauncherDownValue()) {
-            shouldQuit = true;
-            return;
-        }
         // do not wind if harvester is up
         if (Robot.harvester.isHarvesterUp()) {
             shouldQuit = true;
             return;
         }
         else {
-            setTimeout(3);
+            setTimeout(8.0);
         }
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         if (!shouldQuit) {
-            Robot.launcher.startWindingMotor(0.5);
+            Robot.launcher.startWindingMotor(1.0);
         }
     }
     // Make this return true when this Command no longer needs to run execute()
@@ -63,6 +58,7 @@ public class  WindLauncher extends Command {
     protected void end() {
         System.out.println("WindLauncher end");
         Robot.launcher.stopWindingMotor();
+        Robot.launcher.setLaunchedBall(false);
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run

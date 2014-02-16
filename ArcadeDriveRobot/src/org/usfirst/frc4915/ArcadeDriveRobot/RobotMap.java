@@ -63,7 +63,7 @@ public class RobotMap {
         airCompressorCompressor = new Compressor(1, 1, 1, 1);
 	
         
-        launcherWindingMotor = new Talon(1, 3);
+        launcherWindingMotor = new Talon(1, 6);
 	LiveWindow.addActuator("Launcher", "Winding Motor", (Talon) launcherWindingMotor);
         
         launcherPneumaticPistonDoubleSolenoid = new DoubleSolenoid(1, 3, 4);      
