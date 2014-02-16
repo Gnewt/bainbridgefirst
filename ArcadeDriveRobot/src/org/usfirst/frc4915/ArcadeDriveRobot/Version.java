@@ -22,6 +22,7 @@ public class Version {
     // Version system changed
     // PID ratios altered
     // Throttle values updated when robot is stopped
+    // Limit switch returns true when pressed
     
     public static String getVersion() {
         return VERSION;
