@@ -29,13 +29,14 @@ public class  Launch extends Command {
         System.out.println("Initialize Launcher SUBCommand");
         shouldQuit = false;
         // Preconditions: Harvester is down
-        //                Launcher is wound
-        if ((Robot.harvester.isHarvesterUp()) || !(Robot.launcher.getLimitSwitchForLauncherDownValue())) {
+        if ( (Robot.harvester.isHarvesterUp()) ) {
             shouldQuit = true;
+            System.out.println("No shooting because the harvester is up");
         }
         else {
+            Robot.launcher.setLaunchedBall(true);
             Robot.launcher.pneumaticsForward();
-            setTimeout(3);
+            setTimeout(2);
         }
     }
     // Called repeatedly when this Command is scheduled to run
@@ -49,6 +50,7 @@ public class  Launch extends Command {
     protected void end() {
         Robot.launcher.pneumaticsReverse();
         System.out.println("Finished Launch SUBCommand");
+        Robot.launcher.setLaunchedBall(true);
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
