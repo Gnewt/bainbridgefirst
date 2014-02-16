@@ -233,7 +233,7 @@ Children:
           default: '1'
           name: Output Channel (PWM)
           validators: *id005
-          value: '3'
+          value: '5'
     - Name: Pneumatic Piston Double Solenoid
       Base: Double Solenoid
       Children: []
@@ -636,7 +636,7 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Harvester}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: false}
+        name: Button on SmartDashboard, validators: null, value: true}
   - Name: Stop Harvester Wheels
     Base: Command
     Children: []

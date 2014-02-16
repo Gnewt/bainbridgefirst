@@ -89,6 +89,7 @@ public class OI {
         SmartDashboard.putData("Start Compression", new StartCompression());
         SmartDashboard.putData("Stop Compression", new StopCompression());
         SmartDashboard.putData("Wind Launcher", new WindLauncher());
+        SmartDashboard.putData("Intake Down", new IntakeDown());
         SmartDashboard.putData("PID Turn 180", new PIDTurn180());
         SmartDashboard.putData("Launch", new Launch());
         SmartDashboard.putData("Wind Command Group", new WindCommandGroup());
