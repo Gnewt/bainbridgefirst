@@ -37,10 +37,10 @@ public class WindLauncher extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         if (((Talon) Robot.launcher.getWindingMotor()).isSafetyEnabled()) {
-            System.out.println("Winding SetSafetyEnabled is true");
+           // System.out.println("Winding SetSafetyEnabled is true");
         }
         else {
-            System.out.println("Winding SetSafetyEnabled is false");
+           // System.out.println("Winding SetSafetyEnabled is false");
         }
         if (!shouldQuit) {
             Robot.launcher.startWindingMotor(1.0);
@@ -61,7 +61,7 @@ public class WindLauncher extends Command {
             System.out.println("WindLauncher: Limit switch reached");
         }
         else {
-            System.out.println("WindLauncher: Is NOT finished");
+            //System.out.println("WindLauncher: Is NOT finished");
             result = false;
         }
         return result;
