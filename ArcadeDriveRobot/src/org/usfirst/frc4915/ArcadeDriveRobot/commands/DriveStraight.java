@@ -33,7 +33,7 @@ public class DriveStraight extends Command {
     protected void initialize() {
         Robot.driveTrain.setMaxOutput(0.60);
         Robot.gyroscope.reset();
-        setTimeout(3.0); // 15 ft 4 inches = 3 seconds
+        setTimeout(2.4); // 15 ft 4 inches = 3 seconds
     }
     // Called repeatedly when this Command is scheduled to run
 
