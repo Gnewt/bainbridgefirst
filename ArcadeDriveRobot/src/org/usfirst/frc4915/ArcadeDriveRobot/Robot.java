@@ -72,10 +72,7 @@ public class Robot extends IterativeRobot {
         if (airCompressor != null) {
             airCompressor.start();
         }
-<<<<<<< HEAD
-        if (harvester != null && RobotMap.launcherLimitSwitchForLauncherDown.get()) {
-            harvester.retractPneumatics();
-=======
+
         if (harvester != null && !RobotMap.launcherLimitSwitchForLauncherDown.get()) {
             if (harvester.isHarvesterUp()) {
                 harvester.retractPneumatics();
@@ -83,8 +80,6 @@ public class Robot extends IterativeRobot {
                 harvester.extendPneumatics();
             }
             harvester.stopWheels();
-
->>>>>>> upstream/master
         }
         if (launcher != null) {
             launcher.pneumaticsReverse();
