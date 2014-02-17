@@ -41,7 +41,7 @@ public class  Turn180 extends Command {
         shouldQuit = false;
         Robot.gyroscope.reset();
         // set safety timeout
-        setTimeout(6.0);
+        setTimeout(5.0);
         System.out.println("Began 180 turn");
         /*
         setTimeout(5.0);

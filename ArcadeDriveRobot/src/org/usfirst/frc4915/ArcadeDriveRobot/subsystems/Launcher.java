@@ -73,4 +73,8 @@ public class Launcher extends Subsystem {
     public void setLaunchedBall(boolean value) {
         hasLaunched = value;
     }
+    
+    public SpeedController getWindingMotor() {
+        return windingMotor;
+    }
 }
