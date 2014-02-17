@@ -70,6 +70,7 @@ public class Robot extends IterativeRobot {
         if (airCompressor != null) {
             airCompressor.start();
         }
+
         if (harvester != null && !RobotMap.launcherLimitSwitchForLauncherDown.get()) {
             if (harvester.isHarvesterUp()) {
                 harvester.retractPneumatics();
