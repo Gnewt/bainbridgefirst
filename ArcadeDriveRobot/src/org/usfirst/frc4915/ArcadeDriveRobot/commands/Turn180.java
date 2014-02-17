@@ -69,15 +69,15 @@ public class  Turn180 extends Command {
             }
             
             Robot.driveTrain.setMaxOutput(motorSpeed);
-            System.out.println("Turning at "+motorSpeed);
+            //System.out.println("Turning at "+motorSpeed);
             Robot.driveTrain.turn();
         }
     }
     // Checks whether Robot has turned within a certain number of degrees from 180
     protected boolean isFinished() {
         if (shouldQuit) return true;
-        return ((165.0-degreesOfFreedom < Robot.gyroscope.getAngle()) ||
-             (-165.0+degreesOfFreedom > Robot.gyroscope.getAngle()) || isTimedOut());
+        return ((180.0-degreesOfFreedom < Robot.gyroscope.getAngle()) ||
+             (-180.0+degreesOfFreedom > Robot.gyroscope.getAngle()) || isTimedOut());
         /*if (isTimedOut()) {
             return true;
         }
