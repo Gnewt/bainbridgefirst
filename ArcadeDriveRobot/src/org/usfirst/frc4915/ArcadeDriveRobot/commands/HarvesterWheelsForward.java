@@ -12,9 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
 import org.usfirst.frc4915.ArcadeDriveRobot.subsystems.Harvester;
 
-/**
- * TODO: Finish code!
- */
+
 public class HarvesterWheelsForward extends Command {
     private boolean interruptionFinish = false;
     public HarvesterWheelsForward() {
