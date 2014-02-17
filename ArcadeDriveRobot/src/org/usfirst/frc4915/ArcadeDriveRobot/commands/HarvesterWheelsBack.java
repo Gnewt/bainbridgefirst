@@ -11,11 +11,9 @@ package org.usfirst.frc4915.ArcadeDriveRobot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
 import org.usfirst.frc4915.ArcadeDriveRobot.subsystems.Harvester;
-
 /**
  * TODO: Finish code!
  */
-
 public class HarvesterWheelsBack extends Command {
     private boolean interruptionFinish = false;
     public HarvesterWheelsBack() {
@@ -27,6 +25,7 @@ public class HarvesterWheelsBack extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        Robot.harvester.setWheelSpeed(0.0);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
