@@ -64,8 +64,7 @@ public class Launcher extends Subsystem {
     // Limit switch normally returns false
     // Changes switch to true
     public boolean getLimitSwitchForLauncherDownValue() {
-        return !limitSwitchForLauncherDown.get();
-        // TODO: Will need to change this when the wiring changes.
+        return limitSwitchForLauncherDown.get();
     }
     public boolean hasLaunchedBall() {
         return hasLaunched;
