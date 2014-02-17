@@ -28,7 +28,10 @@ public class  HarvesterWheelsDefault extends Command {
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if (Robot.harvester.wheelsShouldBeON) {
+        if (Robot.harvester.isHarvesterUp()) {
+            Robot.harvester.setWheelSpeed(0.0);
+        }
+        else if (Robot.harvester.wheelsShouldBeON) {
             Robot.harvester.setWheelSpeed(Harvester.INTAKE);
         }
         else {
