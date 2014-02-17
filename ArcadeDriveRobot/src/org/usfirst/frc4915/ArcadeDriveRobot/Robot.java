@@ -64,6 +64,9 @@ public class Robot extends IterativeRobot {
         if (gyroscope != null) {
             gyroscope.reset();
         }
+        else {
+            SendUserMessages.display(3, "Gyroscope absent!!!");
+        }
         if (airCompressor != null) {
             airCompressor.start();
         }
@@ -107,6 +110,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         SmartDashboard.putNumber("Gyroscope", gyroscope.getAngle());
+        SmartDashboard.putBoolean("Launcher Limit Switch", launcher.getLimitSwitchForLauncherDownValue());
         SmartDashboard.putData(Scheduler.getInstance());
         batteryVoltage = DriverStation.getInstance().getBatteryVoltage();
         SmartDashboard.putNumber("BatteryVoltage: ", batteryVoltage);
