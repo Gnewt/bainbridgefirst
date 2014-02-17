@@ -72,7 +72,7 @@ public class OI {
         turn180 = new JoystickButton(joystickDrive, 5);
         turn180.whenPressed(new Turn180());
         stopHarvesterWheelsButton = new JoystickButton(joystickDrive, 9);
-        stopHarvesterWheelsButton.whenPressed(new StopHarvesterWheels());
+        stopHarvesterWheelsButton.whenPressed(new ToggleHarvesterWheels());
         ejectBallButton = new JoystickButton(joystickDrive, 2);
         ejectBallButton.whenPressed(new IntakeRelease());
         intakeUpButton = new JoystickButton(joystickDrive, 4);

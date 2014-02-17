@@ -173,7 +173,7 @@ Children:
           value: '1'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: Stop Harvester Wheels}
+        name: Default Command, type: Command, validators: null, value: Toggle Harvester Wheels}
   - Name: Air Compressor
     Base: Subsystem
     Children:
@@ -395,7 +395,7 @@ Children:
           name: Command
           type: Command
           validators: *id018
-          value: Stop Harvester Wheels
+          value: Toggle Harvester Wheels
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id019
           default: '1'
@@ -661,7 +661,7 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Harvester}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
-  - Name: Stop Harvester Wheels
+  - Name: Toggle Harvester Wheels
     Base: Command
     Children: []
     Properties:
@@ -721,6 +721,14 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Launcher}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Harvester Wheels Default
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Harvester}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: false}
   Properties: {}
 Properties:
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,

@@ -19,7 +19,6 @@ public class LaunchCommandGroup extends CommandGroup {
     public LaunchCommandGroup() {
         System.out.println("Starting Launch Command Group");
         addSequential(new IntakeDown());
-        addSequential(new StopHarvesterWheels());
         addSequential(new Launch());
         addSequential(new WindCommandGroup());
         System.out.println("Finished Launch Command Group");

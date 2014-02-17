@@ -16,6 +16,7 @@ import org.usfirst.frc4915.ArcadeDriveRobot.subsystems.Harvester;
  */
 public class IntakeDown extends Command {
     private boolean shouldQuit;
+    private boolean timerSet;
     public IntakeDown() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -26,6 +27,7 @@ public class IntakeDown extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
         shouldQuit = false;
+        timerSet = false;
         if (Robot.launcher.hasLaunchedBall() == true) {
             shouldQuit = true;
         } else if (Robot.harvester.isHarvesterDown() == false) {
@@ -39,6 +41,10 @@ public class IntakeDown extends Command {
     protected void execute() {
         if (!shouldQuit) {
             Robot.harvester.setWheelSpeed(Robot.harvester.getHarvesterSpeed(Harvester.INTAKE));
+            if (Robot.harvester.isHarvesterUp() && (timerSet == false)) {
+                setTimeout(2.0); // Keep spinning wheels after pneumatics are up to ensure ball is held properly
+                timerSet = true;
+            }
         }
     }
     // Make this return true when this Command no longer needs to run execute()
