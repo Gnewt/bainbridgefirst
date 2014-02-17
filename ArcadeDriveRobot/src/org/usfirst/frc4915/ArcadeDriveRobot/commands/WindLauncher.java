@@ -45,6 +45,7 @@ public class WindLauncher extends Command {
         if (!shouldQuit) {
             Robot.launcher.startWindingMotor(1.0);
         }
+        Robot.harvester.stopWheels();
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

@@ -76,8 +76,8 @@ public class  Turn180 extends Command {
     // Checks whether Robot has turned within a certain number of degrees from 180
     protected boolean isFinished() {
         if (shouldQuit) return true;
-        return ((180.0-degreesOfFreedom < Robot.gyroscope.getAngle()) ||
-             (-180.0+degreesOfFreedom > Robot.gyroscope.getAngle()) || isTimedOut());
+        return ((175.0-degreesOfFreedom < Robot.gyroscope.getAngle()) ||
+             (-175.0+degreesOfFreedom > Robot.gyroscope.getAngle()) || isTimedOut());
         /*if (isTimedOut()) {
             return true;
         }
