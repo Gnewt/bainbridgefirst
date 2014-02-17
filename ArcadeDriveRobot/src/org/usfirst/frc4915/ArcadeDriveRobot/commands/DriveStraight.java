@@ -40,7 +40,6 @@ public class DriveStraight extends Command {
     protected void execute() {
         double angle = Robot.gyroscope.getAngle(); // get current heading
         Robot.driveTrain.drive(1.0, (angle) * (KP)); // drive towards heading 0
-        Timer.delay(0.004);
     }
     // Make this return true when this Command no longer needs to run execute()
 
