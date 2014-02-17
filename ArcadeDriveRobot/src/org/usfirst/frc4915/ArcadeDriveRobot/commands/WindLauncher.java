@@ -48,10 +48,23 @@ public class WindLauncher extends Command {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
+        boolean result;
+        result = true;
+        
         if (shouldQuit) {
-            return true;
+            System.out.println("WindLauncher: Quit flag is set to true");
         }
-        return (isTimedOut() || Robot.launcher.getLimitSwitchForLauncherDownValue());
+        else if (isTimedOut()) {
+            System.out.println("WindLauncher: Timed out");
+        }
+        else if (Robot.launcher.getLimitSwitchForLauncherDownValue()) {
+            System.out.println("WindLauncher: Limit switch reached");
+        }
+        else {
+            System.out.println("WindLauncher: Is NOT finished");
+            result = false;
+        }
+        return result;
     }
     // Called once after isFinished returns true
     protected void end() {
