@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
 import org.usfirst.frc4915.ArcadeDriveRobot.subsystems.Harvester;
 
-
 public class IntakeRelease extends Command {
     public IntakeRelease() {
         // Use requires() here to declare subsystem dependencies

@@ -40,7 +40,7 @@ public class IntakeUp extends Command {
         if (!shouldQuit) {
             Robot.harvester.setWheelSpeed(Robot.harvester.getHarvesterSpeed(Harvester.INTAKE));
             if (Robot.harvester.isHarvesterUp() && (timerSet == false)) {
-                setTimeout(2.0); // Explain why!
+                setTimeout(2.0); // Keep spinning wheels after pneumatics are up to ensure ball is held properly
                 timerSet = true;
             }
         }
