@@ -50,7 +50,6 @@ public class WindLauncher extends Command {
     protected boolean isFinished() {
         boolean result;
         result = true;
-        
         if (shouldQuit) {
             System.out.println("WindLauncher: Quit flag is set to true");
         }
