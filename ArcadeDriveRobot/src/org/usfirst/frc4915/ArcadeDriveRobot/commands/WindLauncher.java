@@ -39,7 +39,7 @@ public class WindLauncher extends Command {
             shouldQuit = true;
             return;
         } else {
-            setTimeout(8.0);
+            setTimeout(4.5);
         }
         setInterruptible(false);
     }

@@ -20,6 +20,7 @@ public class AutonomousCommandGroup extends CommandGroup {
 
         addSequential(new DriveStraight());
         addSequential(new LaunchCommandGroup());
+        System.out.println("Autononmous Command Group Ended");
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
