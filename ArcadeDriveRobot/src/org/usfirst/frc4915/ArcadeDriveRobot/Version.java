@@ -11,7 +11,7 @@ package org.usfirst.frc4915.ArcadeDriveRobot;
  */
 public class Version {
 
-    private static final String VERSION = "v2.03.00";
+    private static final String VERSION = "v2.03.01";
     // Should be ready for practice
     // Implements safety changes
 
