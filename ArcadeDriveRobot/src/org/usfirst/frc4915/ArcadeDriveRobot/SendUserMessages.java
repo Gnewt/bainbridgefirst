@@ -5,18 +5,15 @@ package org.usfirst.frc4915.ArcadeDriveRobot;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
- * @author David
- * v.1.0.0
+ * @author David v.1.0.0
  */
-
 import edu.wpi.first.wpilibj.DriverStationLCD;
 
 /* This is a simple class to make sending messages to the Driver Station easier*/
+public class SendUserMessages {
 
-public class SendUserMessages {    
     /**
      *
      * @param line which line to print the message on
@@ -24,7 +21,7 @@ public class SendUserMessages {
      */
     public static void display(int line, String msg) {
         DriverStationLCD.Line l;
-        switch(line) {
+        switch (line) {
             case 1:
                 /* kMain6 is depreciated - use kUser1 for top of the screen */
                 l = DriverStationLCD.Line.kUser1;
