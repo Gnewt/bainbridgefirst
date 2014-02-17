@@ -15,6 +15,7 @@ import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
  */
 public class  IntakeUp extends Command {
     private boolean timerSet;
+    private boolean shouldQuit;
     public IntakeUp() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -26,17 +27,28 @@ public class  IntakeUp extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.harvester.retractPneumatics();
-        timerSet = false;
-        System.out.println("Starting IntakeUp...");
+        shouldQuit = false;
+        if(Robot.launcher.hasLaunchedBall() == true) {
+            shouldQuit = true;
+        }
+        else {
+            Robot.harvester.retractPneumatics();
+            timerSet = false;
+            System.out.println("Starting IntakeUp...");
+        }
+     
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.harvester.setWheelSpeed(Robot.harvester.getHarvesterSpeed(Robot.harvester.INTAKE));
-        if(Robot.harvester.isHarvesterUp() && (timerSet == false)){
-            setTimeout(2.0);
-            timerSet = true;
+        if(!shouldQuit){
+            Robot.harvester.setWheelSpeed(Robot.harvester.getHarvesterSpeed(Robot.harvester.INTAKE));
+            
+            if(Robot.harvester.isHarvesterUp() && (timerSet == false)){
+                setTimeout(2.0); // Explain why!
+                timerSet = true;
+            }
         }
+        
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

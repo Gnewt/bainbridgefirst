@@ -29,12 +29,12 @@ public class  DriveStraight extends Command {
     protected void initialize() {
         Robot.driveTrain.setMaxOutput(0.60);
         Robot.gyroscope.reset();
-        setTimeout(10.0);
+        setTimeout(3.0);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         double angle = Robot.gyroscope.getAngle(); // get current heading
-        Robot.driveTrain.drive(-1.0, (-angle)*(KP)); // drive towards heading 0
+        Robot.driveTrain.drive(1.0, (angle)*(KP)); // drive towards heading 0
         Timer.delay(0.004);
     }
     // Make this return true when this Command no longer needs to run execute()
