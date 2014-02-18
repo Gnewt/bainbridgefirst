@@ -28,7 +28,7 @@ public class IntakeUp extends Command {
     protected void initialize() {
         Robot.harvester.stopWheels();
         shouldQuit = false;
-        if (Robot.launcher.hasLaunchedBall() == true) {
+        if ((Robot.launcher.hasLaunchedBall() == true)) {
             shouldQuit = true;
             System.out.println("Aborting IntakeUp, launcher is up.");
         } else {
