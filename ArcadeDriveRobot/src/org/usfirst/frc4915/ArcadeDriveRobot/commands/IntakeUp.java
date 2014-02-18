@@ -26,28 +26,36 @@ public class IntakeUp extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        Robot.harvester.stopWheels();
         shouldQuit = false;
         if (Robot.launcher.hasLaunchedBall() == true) {
             shouldQuit = true;
+            System.out.println("Aborting IntakeUp, launcher is up.");
         } else {
             Robot.harvester.retractPneumatics();
             timerSet = false;
             System.out.println("Starting IntakeUp...");
         }
+        setTimeout(2.0);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         if (!shouldQuit) {
             Robot.harvester.setWheelSpeed(Robot.harvester.getHarvesterSpeed(Harvester.INTAKE));
-            if (Robot.harvester.isHarvesterUp() && (timerSet == false)) {
-                setTimeout(2.0); // Keep spinning wheels after pneumatics are up to ensure ball is held properly
-                timerSet = true;
-            }
+            /*if (Robot.harvester.isHarvesterUp() && (timerSet == false)) {
+            setTimeout(2.0); // Keep spinning wheels after pneumatics are up to ensure ball is held properly
+            timerSet = true;
+            }*/
         }
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return (timerSet && isTimedOut());
+        if (shouldQuit) {
+            return true;
+        }
+        else {
+            return isTimedOut();
+        }
     }
     // Called once after isFinished returns true
     protected void end() {

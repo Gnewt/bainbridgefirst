@@ -21,8 +21,8 @@ public class AutonomousCommand extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
         System.out.println("Autonomous START");
-        setTimeout(2.0);
-        Robot.driveTrain.setMaxOutput(0.40);
+        setTimeout(1.9);
+        Robot.driveTrain.setMaxOutput(0.60);  //0.6 for 3 seconds = 15ft 4in
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {

@@ -70,11 +70,14 @@ public class Robot extends IterativeRobot {
         if (airCompressor != null) {
             airCompressor.start();
         }
-        if (harvester != null && !RobotMap.launcherLimitSwitchForLauncherDown.get()) {
+        //If the intake is up, we assume the ball is not launched
+        if (harvester != null /*&& launcher.getLimitSwitchForLauncherDownValue()*/) {
             if (harvester.isHarvesterUp()) {
-                harvester.retractPneumatics();
+                harvester.retractPneumatics(); //keep the state
+                launcher.setLaunchedBall(false);
             } else {
-                harvester.extendPneumatics();
+                harvester.extendPneumatics(); //keep the state
+                launcher.setLaunchedBall(true);
             }
             harvester.stopWheels();
         }
