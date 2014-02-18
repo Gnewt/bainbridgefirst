@@ -17,9 +17,13 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class AutonomousCommandGroup extends CommandGroup {
 
     public AutonomousCommandGroup() {
-        
+        addParallel(new HarvesterWheelsDefault());
+        addParallel(new StopWindingMotor());
         addSequential(new DriveStraight());
+        addParallel(new StopDriveTrain());
         addSequential(new LaunchCommandGroup());
+        addParallel(new HarvesterWheelsDefault());
+        addParallel(new StopWindingMotor());
         System.out.println("Autononmous Command Group Ended");
         // Add Commands here:
         // e.g. addSequential(new Command1());

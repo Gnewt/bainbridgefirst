@@ -63,8 +63,7 @@ public class Launcher extends Subsystem {
     public double getWindingSpeed() {
         return windingMotor.get();
     }
-    // Limit switch normally returns false
-    // Changes switch to true
+    // Limit switch returns true when pushed
     public boolean getLimitSwitchForLauncherDownValue() {
         return limitSwitchForLauncherDown.get();
     }
