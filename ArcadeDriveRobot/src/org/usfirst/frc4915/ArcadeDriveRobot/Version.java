@@ -7,10 +7,10 @@ package org.usfirst.frc4915.ArcadeDriveRobot;
 
 public class Version {
 
-    private static final String VERSION = "v2.04.12";
+    private static final String VERSION = "v4.9.15-competition code";
     // Should be ready for practice
     // Implements safety changes
-    // --Safety enabled for both Harvester and launcher motors
+    // --Safety enabled for both Harvester a:nd launcher motors
     // --Removed delay on drive straight command
     // --Added debug info for the WindingMotor's Safety
     // Adds default behaviors for Winding and Harvester motors.
