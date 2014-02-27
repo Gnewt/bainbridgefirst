@@ -23,11 +23,11 @@ void loop() {
   for (int c = 2; c > 0; c--) {
     cylon(YELLOW, BLUE);
   }
-  for (int i=0 ; i < NUM_LEDS; i++) {
-        leds[i] = CRGB::Red;
+  displayRed();
+  for (int c = 20; c > 0; c--) {
+    alternate(YELLOW, BLUE);
   }
-  FastLED.show();
-  delay(2000);
+  displayRed();
 }
 
 
@@ -54,4 +54,42 @@ void cylon(CRGB colorOne, CRGB colorTwo) {
 		// Wait a little bit before we loop around and do it again
 		delay(30);
 	}
+}
+
+void alternate(CRGB colorOne, CRGB colorTwo) {
+  for(int i = 0; i < NUM_LEDS; i++) {
+    
+    if ((i & 1) == 0) { // For even numbered LEDs...
+      leds[i] = colorOne;
+    }
+    else {
+      leds[i] = colorTwo;
+    }
+    
+  }
+  
+  FastLED.show();
+  delay(200);
+  
+  for(int i = 0; i < NUM_LEDS; i++) {
+    
+    if ((i & 1) == 1) { // For odd numbered LEDs...
+      leds[i] = colorOne;
+    }
+    else {
+      leds[i] = colorTwo;
+    }
+    
+  }
+  
+  FastLED.show();
+  delay(200);
+}
+
+void displayRed() {
+  for (int i=0 ; i < NUM_LEDS; i++) {
+        leds[i] = CRGB::Red;
+  }
+  FastLED.show();
+  delay(2000);
 }
