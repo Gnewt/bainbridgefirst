@@ -40,7 +40,7 @@ void loop() {
   for (int c = 4; c > 0; c--) {
     cylon(YELLOW, BLUE);
   }
-  for (int c = 50; c > 0; c--) {
+  for (int c = 25; c > 0; c--) {
     alternate(YELLOW, BLUE);
   }
 }
