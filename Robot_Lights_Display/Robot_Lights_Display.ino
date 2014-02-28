@@ -48,7 +48,7 @@ void loop() {
 void rotatingCogs(CRGB colorOne, CRGB colorTwo) {
   cogs(colorOne, colorTwo);
   FastLED.show();
-  for (int i = 0; i < 40; i++) {
+  for (int i = 0; i < 80; i++) {
     for (int c = 0; c < 4; c++) {
       moveCogsUp();
       delay(75);
