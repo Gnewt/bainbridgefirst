@@ -35,32 +35,30 @@ void setup() {
 }
 
 void loop() {
-  for (int c = 2; c > 0; c--) {
+  rotatingCogs(YELLOW, BLUE);
+  displayColor(YELLOW);
+  for (int c = 4; c > 0; c--) {
     cylon(YELLOW, BLUE);
   }
-  displayRed();
-  for (int c = 20; c > 0; c--) {
+  for (int c = 50; c > 0; c--) {
     alternate(YELLOW, BLUE);
   }
-  displayRed();
-  rotatingCogs(YELLOW, BLUE);
-  displayRed();
 }
 
 void rotatingCogs(CRGB colorOne, CRGB colorTwo) {
   cogs(colorOne, colorTwo);
   FastLED.show();
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < 40; i++) {
     for (int c = 0; c < 4; c++) {
       moveCogsUp();
-      delay(30);
+      delay(75);
       FastLED.show();
     }
   }
 }
 
 void cylon(CRGB colorOne, CRGB colorTwo) {
-  for(int i = 0; i < NUM_LEDS; i++) {
+  for (int i = 0; i < NUM_LEDS; i++) {
 		// Set the i'th led to red 
 		leds[i] = colorOne;
 		// Show the leds
@@ -114,12 +112,11 @@ void alternate(CRGB colorOne, CRGB colorTwo) {
   delay(200);
 }
 
-void displayRed() {
+void displayColor(CRGB color) {
   for (int i=0 ; i < NUM_LEDS; i++) {
-        leds[i] = CRGB::Red;
+        leds[i] = color;
   }
   FastLED.show();
-  delay(2000);
 }
 
 void cogs(CRGB colorOne, CRGB colorTwo) {
