@@ -59,7 +59,7 @@ void rotatingCogs(CRGB colorOne, CRGB colorTwo) {
 
 void cylon(CRGB colorOne, CRGB colorTwo) {
   for (int i = 0; i < NUM_LEDS; i++) {
-		// Set the i'th led to red 
+		// Set the i'th led to colorOne 
 		leds[i] = colorOne;
 		// Show the leds
 		FastLED.show();
@@ -71,7 +71,7 @@ void cylon(CRGB colorOne, CRGB colorTwo) {
 
 	// Now go in the other direction.  
 	for(int i = NUM_LEDS-1; i >= 0; i--) {
-		// Set the i'th led to red 
+		// Set the i'th led to colorTwo 
 		leds[i] = colorTwo;
 		// Show the leds
 		FastLED.show();
@@ -84,7 +84,6 @@ void cylon(CRGB colorOne, CRGB colorTwo) {
 
 void alternate(CRGB colorOne, CRGB colorTwo) {
   for(int i = 0; i < NUM_LEDS; i++) {
-    
     if ((i & 1) == 0) { // For even numbered LEDs...
       leds[i] = colorOne;
     }
