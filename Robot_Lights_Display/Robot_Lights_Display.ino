@@ -40,7 +40,7 @@ void loop() {
   for (int c = 4; c > 0; c--) {
     cylon(YELLOW, BLUE);
   }
-  for (int c = 25; c > 0; c--) {
+  for (int c = 50; c > 0; c--) {
     alternate(YELLOW, BLUE);
   }
 }
@@ -48,8 +48,8 @@ void loop() {
 void rotatingCogs(CRGB colorOne, CRGB colorTwo) {
   cogs(colorOne, colorTwo);
   FastLED.show();
-  for (int i = 0; i < 80; i++) {
-    for (int c = 0; c < 4; c++) {
+  for (int i = 0; i < 40; i++) {
+    for (int c = 0; c < COG_SIZE; c++) {
       moveCogsUp();
       delay(75);
       FastLED.show();
