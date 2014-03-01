@@ -12,7 +12,7 @@
 #define YELLOW CRGB(255, 90, 0)
 #define BLUE CRGB(0, 50, 170)
 
-#define COG_SIZE 4
+#define COG_SIZE 4 //MUST BE FOUR
 
 /*
 Ronnie: I won't be able to come to Robotics today. If you read this message, you should test each method.
