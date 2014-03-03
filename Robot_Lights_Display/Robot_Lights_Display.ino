@@ -159,6 +159,20 @@ void moveCogsDown() {
   }
 }
 
+void insertMiddle(CRGB colorIn) {
+  for (int i = 0; i < (NUM_LEDS/2 - 1); i++) {
+    leds[i] = leds[i+1];
+    leds[NUM_LEDS - i - 1] = leds[NUM_LEDS - i - 2];
+  }
+  if ((NUM_LEDS & 1) == 1) {
+    leds[(NUM_LEDS - 1)/2] = colorIn;
+  }
+  else {
+    leds[NUM_LEDS/2 - 1] = colorIn;
+    leds[NUM_LEDS/2] = colorIn;
+  }
+}
+
 //moves every led up one, and inserts colorIn at leds[0]
 void shiftUp(CRGB colorIn) {
   for (int i = (NUM_LEDS - 1); i > 0; i--) {
