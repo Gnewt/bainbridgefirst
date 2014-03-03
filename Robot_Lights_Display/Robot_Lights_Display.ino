@@ -35,7 +35,9 @@ void setup() {
 }
 
 void loop() {
-  rotatingCogs(YELLOW, BLUE);
+  cogs(YELLOW, BLUE);
+  rotatingCogsUp(YELLOW, BLUE);
+  rotatingCogsDown(YELLOW, BLUE);
   displayColor(YELLOW);
   for (int c = 4; c > 0; c--) {
     cylon(YELLOW, BLUE);
@@ -46,12 +48,22 @@ void loop() {
   expandMiddle(YELLOW, BLUE);
 }
 
-void rotatingCogs(CRGB colorOne, CRGB colorTwo) {
-  cogs(colorOne, colorTwo);
+void rotatingCogsUp(CRGB colorOne, CRGB colorTwo) {
   FastLED.show();
   for (int i = 0; i < 40; i++) {
     for (int c = 0; c < COG_SIZE; c++) {
       moveCogsUp();
+      delay(75);
+      FastLED.show();
+    }
+  }
+}
+
+void rotatingCogsDown(CRGB colorOne, CRGB colorTwo) {
+  FastLED.show();
+  for (int i = 0; i < 40; i++) {
+    for (int c = 0; c < COG_SIZE; c++) {
+      moveCogsDown();
       delay(75);
       FastLED.show();
     }
