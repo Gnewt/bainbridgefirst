@@ -119,16 +119,27 @@ void displayColor(CRGB color) {
   FastLED.show();
 }
 
+//void cogs(CRGB colorOne, CRGB colorTwo) {
+//  for (int i = 0; i < NUM_LEDS; i++) {
+//    if ((i & COG_SIZE) == 0) { //Alternates every 4.
+//      leds[i] = colorOne;
+//    }
+//    else {
+//      leds[i] = colorTwo;
+//    }
+//  }
+//}
+
 void cogs(CRGB colorOne, CRGB colorTwo) {
   for (int i = 0; i < NUM_LEDS; i++) {
-    if ((i & COG_SIZE) == 0) { //Alternates every 4.
+    if ((((int) (i / COG_SIZE)) & 1) == 0) { //Alternates every 4.
       leds[i] = colorOne;
     }
     else {
       leds[i] = colorTwo;
     }
   }
-}
+}  
 
 void moveCogsUp() {
   boolean changeColor = true;
