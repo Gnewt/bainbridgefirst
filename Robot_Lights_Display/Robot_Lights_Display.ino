@@ -43,6 +43,7 @@ void loop() {
   for (int c = 50; c > 0; c--) {
     alternate(YELLOW, BLUE);
   }
+  expandMiddle(YELLOW, BLUE);
 }
 
 void rotatingCogs(CRGB colorOne, CRGB colorTwo) {
@@ -170,6 +171,21 @@ void insertMiddle(CRGB colorIn) {
   else {
     leds[NUM_LEDS/2 - 1] = colorIn;
     leds[NUM_LEDS/2] = colorIn;
+  }
+}
+
+void expandMiddle(CRGB colorOne, CRGB colorTwo) {
+  displayColor(colorTwo);
+  FastLED.show();
+  for (int i = 0; i < 10; i++) {
+    for (int c = 0; c < COG_SIZE; c++) {
+      insertMiddle(colorOne);
+      FastLED.show();
+    }
+    for (int c = 0; c < COG_SIZE; c++) {
+      insertMiddle(colorTwo);
+      FastLED.show();
+    }
   }
 }
 
