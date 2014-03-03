@@ -12,7 +12,7 @@
 #define YELLOW CRGB(255, 90, 0)
 #define BLUE CRGB(0, 50, 170)
 
-#define COG_SIZE 4 //MUST BE FOUR
+#define COG_SIZE 4
 
 /*
 Ronnie: I won't be able to come to Robotics today. If you read this message, you should test each method.
@@ -40,7 +40,7 @@ void loop() {
   for (int c = 4; c > 0; c--) {
     cylon(YELLOW, BLUE);
   }
-  for (int c = 50; c > 0; c--) {
+  for (int c = 25; c > 0; c--) {
     alternate(YELLOW, BLUE);
   }
   expandMiddle(YELLOW, BLUE);
