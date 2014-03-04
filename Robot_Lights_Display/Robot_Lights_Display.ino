@@ -12,7 +12,7 @@
 #define YELLOW CRGB(255, 90, 0)
 #define BLUE CRGB(0, 50, 170)
 
-#define COG_SIZE 4
+#define COG_SIZE 6
 
 /*
 Ronnie: I won't be able to come to Robotics today. If you read this message, you should test each method.
@@ -30,8 +30,9 @@ You also may want to take out the interrupting red lights.
 // Define the array of leds
 CRGB leds[NUM_LEDS];
 
-void setup() { 
-	FastLED.addLeds<WS2801, DATA_PIN, CLOCK_PIN, RGB>(leds, NUM_LEDS);
+void setup() {
+  FastLED.setBrightness(50);
+  FastLED.addLeds<WS2801, DATA_PIN, CLOCK_PIN, RGB>(leds, NUM_LEDS);
 }
 
 void loop() {
@@ -53,7 +54,7 @@ void rotatingCogsUp(CRGB colorOne, CRGB colorTwo) {
   for (int i = 0; i < 40; i++) {
     for (int c = 0; c < COG_SIZE; c++) {
       moveCogsUp();
-      delay(75);
+      delay(100);
       FastLED.show();
     }
   }
@@ -64,8 +65,8 @@ void rotatingCogsDown(CRGB colorOne, CRGB colorTwo) {
   for (int i = 0; i < 40; i++) {
     for (int c = 0; c < COG_SIZE; c++) {
       moveCogsDown();
-      delay(75);
       FastLED.show();
+      delay(100);
     }
   }
 }
@@ -170,16 +171,16 @@ void moveCogsUp() {
 
 void moveCogsDown() {
   boolean changeColor = true;
-  for (int i = (NUM_LEDS - 1); i > (NUM_LEDS - (COG_SIZE - 1)); i--) {
+  for (int i = (NUM_LEDS - 1); i > (NUM_LEDS - (COG_SIZE)); i--) {
     if (leds[i] != leds[i - 1]) {
       changeColor = false;
     }
   }
   if (changeColor) {
-    shiftDown(leds[COG_SIZE]);
+    shiftDown(leds[NUM_LEDS - COG_SIZE - 1]);
   }
   else {
-    shiftDown(leds[0]);
+    shiftDown(leds[NUM_LEDS - 1]);
   }
 }
 
@@ -200,14 +201,16 @@ void insertMiddle(CRGB colorIn) {
 void expandMiddle(CRGB colorOne, CRGB colorTwo) {
   displayColor(colorTwo);
   FastLED.show();
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < 30; i++) {
     for (int c = 0; c < COG_SIZE; c++) {
       insertMiddle(colorOne);
       FastLED.show();
+      delay(70);
     }
     for (int c = 0; c < COG_SIZE; c++) {
       insertMiddle(colorTwo);
       FastLED.show();
+      delay(70);
     }
   }
 }
