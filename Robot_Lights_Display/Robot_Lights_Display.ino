@@ -12,7 +12,7 @@
 #define YELLOW CRGB(255, 90, 0)
 #define BLUE CRGB(0, 50, 170)
 
-#define COG_SIZE 6
+#define COG_SIZE 5
 
 /*
 Ronnie: I won't be able to come to Robotics today. If you read this message, you should test each method.
@@ -31,8 +31,8 @@ You also may want to take out the interrupting red lights.
 CRGB leds[NUM_LEDS];
 
 void setup() {
-  FastLED.setBrightness(50);
   FastLED.addLeds<WS2801, DATA_PIN, CLOCK_PIN, RGB>(leds, NUM_LEDS);
+  FastLED.setBrightness(30);
 }
 
 void loop() {

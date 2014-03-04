@@ -21,6 +21,7 @@ public class AutonomousCommandGroup extends CommandGroup {
         addParallel(new StopWindingMotor());
         addSequential(new DriveStraight());
         addParallel(new StopDriveTrain());
+        addSequential(new Wait());
         addSequential(new LaunchCommandGroup());
         addParallel(new HarvesterWheelsDefault());
         addParallel(new StopWindingMotor());
