@@ -12,6 +12,7 @@
 #define YELLOW CRGB(255, 90, 0)
 #define BLUE CRGB(0, 50, 170)
 
+
 #define COG_SIZE 5
 
 /*
