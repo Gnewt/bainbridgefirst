@@ -7,7 +7,7 @@ package org.usfirst.frc4915.ArcadeDriveRobot;
 
 public class Version {
 
-    private static final String VERSION = "v4.9.15-competition code";
+    private static final String VERSION = "v4.10.1-TESTRangefinder";
     // Should be ready for practice
     // Implements safety changes
     // --Safety enabled for both Harvester a:nd launcher motors
@@ -15,6 +15,10 @@ public class Version {
     // --Added debug info for the WindingMotor's Safety
     // Adds default behaviors for Winding and Harvester motors.
 
+    // Testing the rangefinder
+    // Should display the distance in inches from wall
+    // MoveUpToDistance moves until it is 3 feet from the wall
+    
     public static String getVersion() {
         return VERSION;
     }

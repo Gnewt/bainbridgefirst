@@ -119,7 +119,9 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putData(Scheduler.getInstance());
         batteryVoltage = DriverStation.getInstance().getBatteryVoltage();
         SmartDashboard.putNumber("BatteryVoltage: ", batteryVoltage);
-        SmartDashboard.putNumber("Range (in inches): ", rangeFinder.getRange()); // assuming .01 volts to 1 inch
+        if (rangeFinder != null) {
+            SmartDashboard.putNumber("Range (in inches): ", rangeFinder.getRange()); // assuming .01 volts to 1 inch
+        }
     }
     /**
      * This function called periodically during test mode
