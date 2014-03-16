@@ -41,4 +41,9 @@ public class RangeFinder extends Subsystem {
         return ( (maxBotixMB1013AnalogInput.getVoltage()) * 100.0); // .01 Volts to 1 inch
                                                                     // example: 0.73 volts for 73 inches
     }
+    
+    /*
+     * "For users of this output that desire to work in voltage, a 5V power supply yields~0.977 mV per 1 mm. 
+     * Output voltage range when powered with 5V is 293mV for 300-mm, and 4.885V for 5000-mm. "
+     */
 }
