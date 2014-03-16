@@ -35,7 +35,7 @@ public class  MoveUpToDistance extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.driveTrain.driveStraight(1);
+        Robot.driveTrain.driveStraight(-1);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -44,7 +44,7 @@ public class  MoveUpToDistance extends Command {
         if (isTimedOut()) {
             result = true;
         }
-        if (Robot.rangeFinder.getRangeInFeet() < 3) {
+        if (Robot.rangeFinder.getRangeInMeters() < 3) {
             result = true;
         }
         return result;

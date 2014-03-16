@@ -29,13 +29,24 @@ public class RangeFinder extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    public double getRange(){
-        return ((maxBotixMB1013AnalogInput.getVoltage()) * 100.0); // .01 Volts to 1 inch
-                                                                    // example: 0.73 volts for 73 inches
+    
+    public double getVoltage() {
+        return maxBotixMB1013AnalogInput.getVoltage();
     }
     
-    public double getRangeInFeet() {
-        return (getRange() / 12);
+    public double getRange(){
+        return ((maxBotixMB1013AnalogInput.getVoltage()) * 1024); // .0009765 Volts to 1 mm
+                                                                    // example: 0.73 volts for 73 mm
+        
+        //TODO: This is incorrect. The documentation states that it is a factor of Vcc/5120 to 1mm.
+        //This means that with our 5 volt power (Vcc), it is 1/1024 V/mm or approximately 1 Volt/meter
+        // 1 meter = 3.28 feet  ===> 3.28 Volt/foot
+        
+        // We are using Analog Voltage Output for our reading
+    }
+    
+    public double getRangeInMeters() {
+        return (getRange() / 1000);
     }
     
     /*
