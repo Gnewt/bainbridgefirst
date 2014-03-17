@@ -44,7 +44,7 @@ public class IntakeDown extends Command {
     }
     // Called once after isFinished returns true
     protected void end() {
-        Robot.harvester.toggleWheelsShouldBeON();
+        Robot.harvester.wheelsShouldBeONSetTrue();
         System.out.println("IntakeDown done.");
     }
     // Called when another command which requires one or more of the same

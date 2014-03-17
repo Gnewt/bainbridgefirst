@@ -103,4 +103,8 @@ public class Harvester extends Subsystem {
     public void toggleWheelsShouldBeON() {
         wheelsShouldBeON = !wheelsShouldBeON;
     }
+    
+    public void wheelsShouldBeONSetTrue() {
+        wheelsShouldBeON = true;
+    }
 }
