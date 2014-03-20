@@ -36,7 +36,7 @@ public class IntakeUp extends Command {
             timerSet = false;
             System.out.println("Starting IntakeUp...");
         }
-        setTimeout(2.0);
+        setTimeout(1.0);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
