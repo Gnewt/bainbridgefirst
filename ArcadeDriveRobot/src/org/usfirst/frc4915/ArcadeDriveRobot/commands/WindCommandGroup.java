@@ -18,7 +18,7 @@ public class WindCommandGroup extends CommandGroup {
 
     public WindCommandGroup() {
 
-        addSequential(new IntakeDown());
+        addSequential(new ExtendPneumatics());
         addSequential(new WindLauncher());
 
 
