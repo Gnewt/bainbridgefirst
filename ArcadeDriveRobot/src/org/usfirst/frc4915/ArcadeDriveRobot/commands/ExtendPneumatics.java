@@ -35,6 +35,7 @@ public class ExtendPneumatics extends Command {
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        Robot.harvester.setWheelSpeed(-0.40);
         Robot.launcher.stopWindingMotor();
     }
     // Make this return true when this Command no longer needs to run execute()
