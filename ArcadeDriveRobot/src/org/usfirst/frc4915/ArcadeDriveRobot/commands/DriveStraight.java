@@ -8,7 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 package org.usfirst.frc4915.ArcadeDriveRobot.commands;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
 /**
@@ -16,6 +15,7 @@ import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
  */
 public class DriveStraight extends Command {
     private static final double KP = 0.03;
+    //timeout = 2.4 in seconds
     public DriveStraight() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -27,7 +27,7 @@ public class DriveStraight extends Command {
     protected void initialize() {
         Robot.driveTrain.setMaxOutput(0.60);
         Robot.gyroscope.reset();
-        setTimeout(2.4); // 15 ft 4 inches = 3 seconds 3 seconds in competition
+        setTimeout(Robot.timeIntervalMovingForwardDuringAuto); // 15 ft 4 inches = 3 seconds 3 seconds in competition
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
