@@ -146,6 +146,8 @@ public class Robot extends IterativeRobot {
             SmartDashboard.putNumber("Range (in mm): ", rangeFinder.getRange()); // assuming 1/1024 Volts/mm
             SmartDashboard.putNumber("Range (raw value)", rangeFinder.getVoltage());
         }
+        SmartDashboard.putBoolean("Harvester UP", harvester.isHarvesterUp());
+        SmartDashboard.putBoolean("Harvester DOWN", harvester.isHarvesterDown());
     }
     /**
      * This function called periodically during test mode
