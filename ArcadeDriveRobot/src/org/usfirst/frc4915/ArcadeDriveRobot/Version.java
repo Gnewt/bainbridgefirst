@@ -7,7 +7,7 @@ package org.usfirst.frc4915.ArcadeDriveRobot;
 
 public class Version {
 
-    private static final String VERSION = "v4.10.4";
+    private static final String VERSION = "v4.10.5";
     // Should be ready for practice
     // Implements safety changes
     // --Safety enabled for both Harvester a:nd launcher motors
