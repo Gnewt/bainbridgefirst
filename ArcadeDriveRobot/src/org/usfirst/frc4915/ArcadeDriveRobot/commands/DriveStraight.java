@@ -15,7 +15,7 @@ import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
  */
 public class DriveStraight extends Command {
     private static final double KP = 0.03;
-    private double timeMovingForward = 3.0;
+    private double timeMovingForward = 2.9;
     //timeout = 2.4 in seconds originally
     public DriveStraight() {
         // Use requires() here to declare subsystem dependencies
