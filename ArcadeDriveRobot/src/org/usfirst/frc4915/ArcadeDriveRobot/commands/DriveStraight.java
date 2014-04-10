@@ -15,6 +15,7 @@ import org.usfirst.frc4915.ArcadeDriveRobot.Robot;
  */
 public class DriveStraight extends Command {
     private static final double KP = 0.03;
+    private double timeMovingForward = 2.4;
     //timeout = 2.4 in seconds
     public DriveStraight() {
         // Use requires() here to declare subsystem dependencies
@@ -25,9 +26,10 @@ public class DriveStraight extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        timeMovingForward = Robot.prefs.getDouble("Autonomous_Duration", timeMovingForward);
         Robot.driveTrain.setMaxOutput(0.60);
         Robot.gyroscope.reset();
-        setTimeout(Robot.timeIntervalMovingForwardDuringAuto); // 15 ft 4 inches = 3 seconds 3 seconds in competition
+        setTimeout(timeMovingForward); // 15 ft 4 inches = 3 seconds 3 seconds in competition
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
